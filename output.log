@@ -1,141 +1,3554 @@
-Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
 ====Input Arguments====
 {
-  "model_name": "sonoisa/t5-base-japanese",
-  "code_num": 64,
+  "model_name": "t5-base",
+  "code_num": 512,
   "max_length": 3,
-  "train_data": "data_ja/train.json",
-  "dev_data": "data_ja/dev.json",
-  "corpus_data": "data_ja/corpus_lite.json",
-  "save_path": "out_ja/model"
+  "train_data": "nq320k_split/train.json",
+  "dev_data": "nq320k_split/dev.json",
+  "corpus_data": "nq320k_split/corpus_lite.json",
+  "save_path": "out_split/model"
 }
-out_ja/model-1-pre
-data size=680
-Training out_ja/model-1-pre 0
-  0%|          | 0/680 [00:00<?, ?it/s]  0%|          | 0/680 [00:01<?, ?it/s, loss=4.21]  0%|          | 1/680 [00:01<15:21,  1.36s/it, loss=4.21]  0%|          | 1/680 [00:01<15:21,  1.36s/it, loss=3.96]  0%|          | 2/680 [00:01<07:46,  1.45it/s, loss=3.96]  0%|          | 2/680 [00:01<07:46,  1.45it/s, loss=3.98]  0%|          | 3/680 [00:01<05:19,  2.12it/s, loss=3.98]  0%|          | 3/680 [00:02<05:19,  2.12it/s, loss=3.99]  1%|          | 4/680 [00:02<04:09,  2.71it/s, loss=3.99]  1%|          | 4/680 [00:02<04:09,  2.71it/s, loss=3.98]  1%|          | 5/680 [00:02<03:30,  3.21it/s, loss=3.98]  1%|          | 5/680 [00:02<03:30,  3.21it/s, loss=3.94]  1%|          | 6/680 [00:02<03:07,  3.59it/s, loss=3.94]  1%|          | 6/680 [00:02<03:07,  3.59it/s, loss=3.9]   1%|          | 7/680 [00:02<02:53,  3.87it/s, loss=3.9]  1%|          | 7/680 [00:02<02:53,  3.87it/s, loss=3.84]  1%|          | 8/680 [00:02<02:43,  4.10it/s, loss=3.84]  1%|          | 8/680 [00:03<02:43,  4.10it/s, loss=3.78]  1%|▏         | 9/680 [00:03<02:36,  4.27it/s, loss=3.78]  1%|▏         | 9/680 [00:03<02:36,  4.27it/s, loss=3.7]   1%|▏         | 10/680 [00:03<02:31,  4.41it/s, loss=3.7]  1%|▏         | 10/680 [00:03<02:31,  4.41it/s, loss=3.66]  2%|▏         | 11/680 [00:03<02:28,  4.50it/s, loss=3.66]  2%|▏         | 11/680 [00:03<02:28,  4.50it/s, loss=3.61]  2%|▏         | 12/680 [00:03<02:26,  4.57it/s, loss=3.61]  2%|▏         | 12/680 [00:03<02:26,  4.57it/s, loss=3.56]  2%|▏         | 13/680 [00:03<02:24,  4.62it/s, loss=3.56]  2%|▏         | 13/680 [00:04<02:24,  4.62it/s, loss=3.54]  2%|▏         | 14/680 [00:04<02:23,  4.66it/s, loss=3.54]  2%|▏         | 14/680 [00:04<02:23,  4.66it/s, loss=3.49]  2%|▏         | 15/680 [00:04<02:21,  4.69it/s, loss=3.49]  2%|▏         | 15/680 [00:04<02:21,  4.69it/s, loss=3.43]  2%|▏         | 16/680 [00:04<02:21,  4.70it/s, loss=3.43]  2%|▏         | 16/680 [00:04<02:21,  4.70it/s, loss=3.39]  2%|▎         | 17/680 [00:04<02:20,  4.72it/s, loss=3.39]  2%|▎         | 17/680 [00:04<02:20,  4.72it/s, loss=3.36]  3%|▎         | 18/680 [00:04<02:21,  4.69it/s, loss=3.36]  3%|▎         | 18/680 [00:05<02:21,  4.69it/s, loss=3.3]   3%|▎         | 19/680 [00:05<02:20,  4.71it/s, loss=3.3]  3%|▎         | 19/680 [00:05<02:20,  4.71it/s, loss=3.26]  3%|▎         | 20/680 [00:05<02:19,  4.74it/s, loss=3.26]  3%|▎         | 20/680 [00:05<02:19,  4.74it/s, loss=3.23]  3%|▎         | 21/680 [00:05<02:18,  4.75it/s, loss=3.23]  3%|▎         | 21/680 [00:05<02:18,  4.75it/s, loss=3.19]  3%|▎         | 21/680 [00:09<04:55,  2.23it/s, loss=3.19]
-Save model out_ja/model-1-pre/0.pt
-DR evaluation out_ja/model-1-pre
-292 743
+DR evaluation out_split/model-3-fit
+1923 10000
 ####################
-DR evaluation out_ja/model-1-pre/0.pt
+DR evaluation out_split/model-3-fit/0.pt
 ## Model # new keys in file: [] # no match keys: []
-  0%|          | 0/6 [00:00<?, ?it/s] 17%|█▋        | 1/6 [00:00<00:04,  1.10it/s] 33%|███▎      | 2/6 [00:01<00:01,  2.16it/s] 50%|█████     | 3/6 [00:01<00:01,  2.92it/s] 67%|██████▋   | 4/6 [00:01<00:00,  3.36it/s] 83%|████████▎ | 5/6 [00:01<00:00,  3.62it/s]100%|██████████| 6/6 [00:01<00:00,  4.16it/s]100%|██████████| 6/6 [00:01<00:00,  3.03it/s]
-(743, 768)
-build index of 743 instances, time cost =0.0019104480743408203
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:00<00:00,  3.92it/s]100%|██████████| 3/3 [00:00<00:00,  7.46it/s]
-search 292 queries, time cost =0.005032777786254883
-Doc_code balance {'Avg': 0.05585464333781964, 'Max': 0.05585464333781964, 'Min': 0.05585464333781964, 'Flat': 0.5020188425302826}
-Doc_code conflict {'Max': 406, 'Min': 337, 'Type': 2, '%': 0.0026917900403768506}
-Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-Kmeans balance {'Avg': 0.594885598923284, 'Max': 0.594885598923284, 'Min': 0.594885598923284, 'Flat': 0.594885598923284}
-Kmeans conflict {'Max': 33, 'Min': 5, 'Type': 64, '%': 0.08613728129205922}
-out_ja/model-1
-## T5ForConditionalGeneration # new keys in file: [] # no match keys: []
-## ModuleList # new keys in file: [] # no match keys: []
-## ModuleList # new keys in file: [] # no match keys: []
-Copy 0.weight torch.Size([64, 768]) from torch.Size([64, 768])
-data size=680
-Training out_ja/model-1 0
-  0%|          | 0/680 [00:00<?, ?it/s]  0%|          | 0/680 [00:00<?, ?it/s, loss=410]  0%|          | 1/680 [00:00<05:43,  1.98it/s, loss=410]  0%|          | 1/680 [00:00<05:43,  1.98it/s, loss=260]  0%|          | 2/680 [00:00<03:47,  2.98it/s, loss=260]  0%|          | 2/680 [00:00<03:47,  2.98it/s, loss=214]  0%|          | 3/680 [00:00<03:10,  3.55it/s, loss=214]  0%|          | 3/680 [00:01<03:10,  3.55it/s, loss=213]  1%|          | 4/680 [00:01<02:53,  3.89it/s, loss=213]  1%|          | 4/680 [00:01<02:53,  3.89it/s, loss=200]  1%|          | 5/680 [00:01<03:32,  3.18it/s, loss=200]  1%|          | 5/680 [00:01<03:32,  3.18it/s, loss=176]  1%|          | 6/680 [00:01<03:07,  3.59it/s, loss=176]  1%|          | 6/680 [00:01<03:07,  3.59it/s, loss=159]  1%|          | 7/680 [00:01<02:53,  3.89it/s, loss=159]  1%|          | 7/680 [00:02<02:53,  3.89it/s, loss=145]  1%|          | 8/680 [00:02<02:42,  4.13it/s, loss=145]  1%|          | 8/680 [00:02<02:42,  4.13it/s, loss=133]  1%|▏         | 9/680 [00:02<02:38,  4.24it/s, loss=133]  1%|▏         | 9/680 [00:02<02:38,  4.24it/s, loss=123]  1%|▏         | 10/680 [00:02<02:36,  4.28it/s, loss=123]  1%|▏         | 10/680 [00:02<02:36,  4.28it/s, loss=114]  2%|▏         | 11/680 [00:02<02:31,  4.42it/s, loss=114]  2%|▏         | 11/680 [00:03<02:31,  4.42it/s, loss=108]  2%|▏         | 12/680 [00:03<02:28,  4.50it/s, loss=108]  2%|▏         | 12/680 [00:03<02:28,  4.50it/s, loss=102]  2%|▏         | 13/680 [00:03<02:26,  4.54it/s, loss=102]  2%|▏         | 13/680 [00:03<02:26,  4.54it/s, loss=96.3]  2%|▏         | 14/680 [00:03<02:31,  4.40it/s, loss=96.3]  2%|▏         | 14/680 [00:03<02:31,  4.40it/s, loss=91.4]  2%|▏         | 15/680 [00:03<02:32,  4.36it/s, loss=91.4]  2%|▏         | 15/680 [00:04<02:32,  4.36it/s, loss=86.8]  2%|▏         | 16/680 [00:04<02:33,  4.33it/s, loss=86.8]  2%|▏         | 16/680 [00:04<02:33,  4.33it/s, loss=82.9]  2%|▎         | 17/680 [00:04<02:33,  4.31it/s, loss=82.9]  2%|▎         | 17/680 [00:04<02:33,  4.31it/s, loss=79.5]  3%|▎         | 18/680 [00:04<02:34,  4.29it/s, loss=79.5]  3%|▎         | 18/680 [00:04<02:34,  4.29it/s, loss=76.4]  3%|▎         | 19/680 [00:04<02:31,  4.36it/s, loss=76.4]  3%|▎         | 19/680 [00:04<02:31,  4.36it/s, loss=73.6]  3%|▎         | 20/680 [00:04<02:33,  4.30it/s, loss=73.6]  3%|▎         | 20/680 [00:05<02:33,  4.30it/s, loss=71.1]  3%|▎         | 21/680 [00:05<02:33,  4.31it/s, loss=71.1]  3%|▎         | 21/680 [00:05<02:33,  4.31it/s, loss=69]    3%|▎         | 22/680 [00:08<13:06,  1.19s/it, loss=69]  3%|▎         | 22/680 [00:08<13:06,  1.19s/it, loss=66.5]  3%|▎         | 23/680 [00:08<09:54,  1.11it/s, loss=66.5]  3%|▎         | 23/680 [00:09<09:54,  1.11it/s, loss=65.1]  4%|▎         | 24/680 [00:09<07:40,  1.42it/s, loss=65.1]  4%|▎         | 24/680 [00:09<07:40,  1.42it/s, loss=63.5]  4%|▎         | 25/680 [00:09<06:02,  1.81it/s, loss=63.5]  4%|▎         | 25/680 [00:09<06:02,  1.81it/s, loss=61.6]  4%|▍         | 26/680 [00:09<04:57,  2.20it/s, loss=61.6]  4%|▍         | 26/680 [00:09<04:57,  2.20it/s, loss=60.3]  4%|▍         | 27/680 [00:09<04:10,  2.61it/s, loss=60.3]  4%|▍         | 27/680 [00:09<04:10,  2.61it/s, loss=59.2]  4%|▍         | 28/680 [00:09<03:40,  2.96it/s, loss=59.2]  4%|▍         | 28/680 [00:10<03:40,  2.96it/s, loss=58]    4%|▍         | 29/680 [00:10<03:15,  3.33it/s, loss=58]  4%|▍         | 29/680 [00:10<03:15,  3.33it/s, loss=56.6]  4%|▍         | 30/680 [00:10<03:00,  3.60it/s, loss=56.6]  4%|▍         | 30/680 [00:10<03:00,  3.60it/s, loss=55.6]  5%|▍         | 31/680 [00:10<02:48,  3.85it/s, loss=55.6]  5%|▍         | 31/680 [00:10<02:48,  3.85it/s, loss=54.3]  5%|▍         | 32/680 [00:10<02:40,  4.03it/s, loss=54.3]  5%|▍         | 32/680 [00:11<02:40,  4.03it/s, loss=53.2]  5%|▍         | 33/680 [00:11<02:34,  4.19it/s, loss=53.2]  5%|▍         | 33/680 [00:11<02:34,  4.19it/s, loss=52.1]  5%|▌         | 34/680 [00:11<02:29,  4.31it/s, loss=52.1]  5%|▌         | 34/680 [00:11<02:29,  4.31it/s, loss=51.1]  5%|▌         | 35/680 [00:11<02:24,  4.47it/s, loss=51.1]  5%|▌         | 35/680 [00:11<02:24,  4.47it/s, loss=50]    5%|▌         | 36/680 [00:11<02:23,  4.48it/s, loss=50]  5%|▌         | 36/680 [00:11<02:23,  4.48it/s, loss=49.4]  5%|▌         | 37/680 [00:11<02:22,  4.53it/s, loss=49.4]  5%|▌         | 37/680 [00:12<02:22,  4.53it/s, loss=48.3]  6%|▌         | 38/680 [00:12<02:21,  4.55it/s, loss=48.3]  6%|▌         | 38/680 [00:12<02:21,  4.55it/s, loss=47.4]  6%|▌         | 39/680 [00:12<02:19,  4.60it/s, loss=47.4]  6%|▌         | 39/680 [00:12<02:19,  4.60it/s, loss=46.6]  6%|▌         | 40/680 [00:12<02:20,  4.55it/s, loss=46.6]  6%|▌         | 40/680 [00:12<02:20,  4.55it/s, loss=45.8]  6%|▌         | 41/680 [00:12<02:17,  4.66it/s, loss=45.8]  6%|▌         | 41/680 [00:12<02:17,  4.66it/s, loss=45]    6%|▌         | 42/680 [00:12<02:18,  4.62it/s, loss=45]  6%|▌         | 42/680 [00:13<02:18,  4.62it/s, loss=44.3]  6%|▋         | 43/680 [00:13<02:16,  4.66it/s, loss=44.3]  6%|▋         | 43/680 [00:13<02:16,  4.66it/s, loss=43.5]  6%|▋         | 44/680 [00:13<02:17,  4.61it/s, loss=43.5]  6%|▋         | 44/680 [00:13<02:17,  4.61it/s, loss=43]    7%|▋         | 45/680 [00:13<02:18,  4.59it/s, loss=43]  7%|▋         | 45/680 [00:13<02:18,  4.59it/s, loss=42.6]  7%|▋         | 46/680 [00:13<02:18,  4.59it/s, loss=42.6]  7%|▋         | 46/680 [00:14<02:18,  4.59it/s, loss=42]    7%|▋         | 47/680 [00:14<02:17,  4.59it/s, loss=42]  7%|▋         | 47/680 [00:14<02:17,  4.59it/s, loss=41.5]  7%|▋         | 48/680 [00:14<02:17,  4.60it/s, loss=41.5]  7%|▋         | 48/680 [00:14<02:17,  4.60it/s, loss=41.2]  7%|▋         | 49/680 [00:14<02:16,  4.62it/s, loss=41.2]  7%|▋         | 49/680 [00:14<02:16,  4.62it/s, loss=40.6]  7%|▋         | 50/680 [00:14<02:16,  4.63it/s, loss=40.6]  7%|▋         | 50/680 [00:14<02:16,  4.63it/s, loss=40]    8%|▊         | 51/680 [00:14<02:13,  4.70it/s, loss=40]  8%|▊         | 51/680 [00:15<02:13,  4.70it/s, loss=39.5]  8%|▊         | 52/680 [00:15<02:13,  4.70it/s, loss=39.5]  8%|▊         | 52/680 [00:15<02:13,  4.70it/s, loss=39.1]  8%|▊         | 53/680 [00:15<02:12,  4.72it/s, loss=39.1]  8%|▊         | 53/680 [00:15<02:12,  4.72it/s, loss=38.6]  8%|▊         | 54/680 [00:15<02:14,  4.65it/s, loss=38.6]  8%|▊         | 54/680 [00:15<02:14,  4.65it/s, loss=38.2]  8%|▊         | 55/680 [00:15<02:15,  4.62it/s, loss=38.2]  8%|▊         | 55/680 [00:16<02:15,  4.62it/s, loss=37.7]  8%|▊         | 56/680 [00:16<02:16,  4.56it/s, loss=37.7]  8%|▊         | 56/680 [00:16<02:16,  4.56it/s, loss=37.2]  8%|▊         | 57/680 [00:16<02:15,  4.59it/s, loss=37.2]  8%|▊         | 57/680 [00:16<02:15,  4.59it/s, loss=36.9]  9%|▊         | 58/680 [00:16<02:15,  4.60it/s, loss=36.9]  9%|▊         | 58/680 [00:16<02:15,  4.60it/s, loss=36.5]  9%|▊         | 59/680 [00:16<02:15,  4.59it/s, loss=36.5]  9%|▊         | 59/680 [00:16<02:15,  4.59it/s, loss=36.2]  9%|▉         | 60/680 [00:16<02:15,  4.58it/s, loss=36.2]  9%|▉         | 60/680 [00:17<02:15,  4.58it/s, loss=36]    9%|▉         | 61/680 [00:17<02:13,  4.64it/s, loss=36]  9%|▉         | 61/680 [00:17<02:13,  4.64it/s, loss=35.7]  9%|▉         | 62/680 [00:17<02:13,  4.63it/s, loss=35.7]  9%|▉         | 62/680 [00:17<02:13,  4.63it/s, loss=35.3]  9%|▉         | 63/680 [00:17<02:11,  4.69it/s, loss=35.3]  9%|▉         | 63/680 [00:17<02:11,  4.69it/s, loss=35.1]  9%|▉         | 64/680 [00:17<02:12,  4.66it/s, loss=35.1]  9%|▉         | 64/680 [00:17<02:12,  4.66it/s, loss=34.8] 10%|▉         | 65/680 [00:17<02:10,  4.70it/s, loss=34.8]Initialization complete
-Iteration  0, inertia 4710.714
-Iteration  1, inertia 2555.491
-Iteration  2, inertia 2465.836
-Iteration  3, inertia 2449.190
-Iteration  4, inertia 2448.464
-Converged at iteration 4: center shift 0.000000e+00 within tolerance 1.443091e-04
+(10000, 768)
+build index of 10000 instances, time cost =0.02054882049560547
+search 1923 queries, time cost =0.045126914978027344
+Doc_code balance {'Avg': 0.426892081554541, 'Max': 0.5, 'Min': 0.006889050036258171, 'Flat': 0.5}
+Doc_code conflict {'Max': 4200, 'Min': 1, 'Type': 24, '%': 0.0024}
+Kmeans balance {'Avg': 0.8321626504400806, 'Max': 1.0, 'Min': 0.505922165820643, 'Flat': 0.51195}
+Kmeans conflict {'Max': 178, 'Min': 1, 'Type': 842, '%': 0.0842}
+####################
+DR evaluation out_split/model-3-fit/9.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020321369171142578
+search 1923 queries, time cost =0.05080056190490723
+Doc_code balance {'Avg': 0.42768167273866764, 'Max': 0.5, 'Min': 0.010998307952622688, 'Flat': 0.5}
+Doc_code conflict {'Max': 3112, 'Min': 1, 'Type': 49, '%': 0.0049}
+Kmeans balance {'Avg': 0.8245791832986397, 'Max': 1.0, 'Min': 0.5062836624775584, 'Flat': 0.5202}
+Kmeans conflict {'Max': 259, 'Min': 1, 'Type': 624, '%': 0.0624}
+####################
+DR evaluation out_split/model-3-fit/18.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020377397537231445
+search 1923 queries, time cost =0.05204343795776367
+Doc_code balance {'Avg': 0.42854548595201036, 'Max': 0.5, 'Min': 0.019216823785351722, 'Flat': 0.501}
+Doc_code conflict {'Max': 2225, 'Min': 1, 'Type': 63, '%': 0.0063}
+Kmeans balance {'Avg': 0.8314446753860691, 'Max': 1.0, 'Min': 0.5062836624775584, 'Flat': 0.5138}
+Kmeans conflict {'Max': 175, 'Min': 1, 'Type': 636, '%': 0.0636}
+####################
+DR evaluation out_split/model-3-fit/27.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.02025437355041504
+search 1923 queries, time cost =0.04980063438415527
+Doc_code balance {'Avg': 0.42965235608055824, 'Max': 0.5, 'Min': 0.022359197486101046, 'Flat': 0.50005}
+Doc_code conflict {'Max': 2420, 'Min': 1, 'Type': 94, '%': 0.0094}
+Kmeans balance {'Avg': 0.8302392270546773, 'Max': 1.0, 'Min': 0.5038675368624608, 'Flat': 0.51205}
+Kmeans conflict {'Max': 284, 'Min': 1, 'Type': 703, '%': 0.0703}
+####################
+DR evaluation out_split/model-3-fit/36.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020290374755859375
+search 1923 queries, time cost =0.05131268501281738
+Doc_code balance {'Avg': 0.4301701651481629, 'Max': 0.5, 'Min': 0.028160502779792096, 'Flat': 0.5002}
+Doc_code conflict {'Max': 1721, 'Min': 1, 'Type': 107, '%': 0.0107}
+Kmeans balance {'Avg': 0.8313885626044456, 'Max': 1.0, 'Min': 0.5063095238095239, 'Flat': 0.5272}
+Kmeans conflict {'Max': 633, 'Min': 1, 'Type': 852, '%': 0.0852}
+####################
+DR evaluation out_split/model-3-fit/45.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.027663469314575195
+search 1923 queries, time cost =0.049302101135253906
+Doc_code balance {'Avg': 0.4299905849479777, 'Max': 0.5, 'Min': 0.028885665941503547, 'Flat': 0.51015}
+Doc_code conflict {'Max': 2149, 'Min': 1, 'Type': 105, '%': 0.0105}
+Kmeans balance {'Avg': 0.8244649554966088, 'Max': 1.0, 'Min': 0.4748653500897666, 'Flat': 0.5138499999999999}
+Kmeans conflict {'Max': 951, 'Min': 1, 'Type': 795, '%': 0.0795}
+####################
+DR evaluation out_split/model-3-fit/54.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.023681163787841797
+search 1923 queries, time cost =0.05163455009460449
+Doc_code balance {'Avg': 0.43035631766358806, 'Max': 0.5, 'Min': 0.032994923857868064, 'Flat': 0.5}
+Doc_code conflict {'Max': 1366, 'Min': 1, 'Type': 127, '%': 0.0127}
+Kmeans balance {'Avg': 0.8308944546251086, 'Max': 1.0, 'Min': 0.5027380952380953, 'Flat': 0.5193}
+Kmeans conflict {'Max': 947, 'Min': 1, 'Type': 788, '%': 0.0788}
+####################
+DR evaluation out_split/model-3-fit/63.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020643234252929688
+search 1923 queries, time cost =0.04893136024475098
+Doc_code balance {'Avg': 0.4302305903267907, 'Max': 0.5, 'Min': 0.03637901861252113, 'Flat': 0.5216000000000001}
+Doc_code conflict {'Max': 2124, 'Min': 1, 'Type': 126, '%': 0.0126}
+Kmeans balance {'Avg': 0.8313843517094157, 'Max': 1.0, 'Min': 0.506857855361596, 'Flat': 0.5244500000000001}
+Kmeans conflict {'Max': 353, 'Min': 1, 'Type': 714, '%': 0.0714}
+####################
+DR evaluation out_split/model-3-fit/72.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.02063775062561035
+search 1923 queries, time cost =0.04805135726928711
+Doc_code balance {'Avg': 0.4284071344303231, 'Max': 0.5, 'Min': 0.01631617113850614, 'Flat': 0.50015}
+Doc_code conflict {'Max': 3101, 'Min': 1, 'Type': 78, '%': 0.0078}
+Kmeans balance {'Avg': 0.8305423693994936, 'Max': 1.0, 'Min': 0.5071813285457809, 'Flat': 0.5098}
+Kmeans conflict {'Max': 115, 'Min': 1, 'Type': 818, '%': 0.0818}
+####################
+DR evaluation out_split/model-3-fit/81.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020672082901000977
+search 1923 queries, time cost =0.04929184913635254
+Doc_code balance {'Avg': 0.4288716202681637, 'Max': 0.5, 'Min': 0.01970026589315932, 'Flat': 0.5}
+Doc_code conflict {'Max': 2502, 'Min': 1, 'Type': 77, '%': 0.0077}
+Kmeans balance {'Avg': 0.8308113690886815, 'Max': 1.0, 'Min': 0.5049875311720698, 'Flat': 0.5105999999999999}
+Kmeans conflict {'Max': 55, 'Min': 1, 'Type': 1523, '%': 0.1523}
+####################
+DR evaluation out_split/model-3-fit/90.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.02015233039855957
+search 1923 queries, time cost =0.049103498458862305
+Doc_code balance {'Avg': 0.42858029603965675, 'Max': 0.5, 'Min': 0.013898960599468269, 'Flat': 0.5}
+Doc_code conflict {'Max': 2518, 'Min': 1, 'Type': 76, '%': 0.0076}
+Kmeans balance {'Avg': 0.8287400000441255, 'Max': 1.0, 'Min': 0.5054387237128354, 'Flat': 0.5186999999999999}
+Kmeans conflict {'Max': 173, 'Min': 1, 'Type': 836, '%': 0.0836}
+####################
+DR evaluation out_split/model-3-fit/99.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020516157150268555
+search 1923 queries, time cost =0.04773998260498047
+Doc_code balance {'Avg': 0.4278290283421966, 'Max': 0.5, 'Min': 0.012206913222141624, 'Flat': 0.5}
+Doc_code conflict {'Max': 2370, 'Min': 1, 'Type': 58, '%': 0.0058}
+Kmeans balance {'Avg': 0.8294194466281066, 'Max': 1.0, 'Min': 0.504364089775561, 'Flat': 0.51085}
+Kmeans conflict {'Max': 71, 'Min': 1, 'Type': 1194, '%': 0.1194}
+####################
+DR evaluation out_split/model-3-fit/108.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020171642303466797
+search 1923 queries, time cost =0.04635000228881836
+Doc_code balance {'Avg': 0.42821728268590276, 'Max': 0.5, 'Min': 0.014140681653372011, 'Flat': 0.5}
+Doc_code conflict {'Max': 2694, 'Min': 1, 'Type': 65, '%': 0.0065}
+Kmeans balance {'Avg': 0.8313205598085937, 'Max': 1.0, 'Min': 0.504364089775561, 'Flat': 0.5145500000000001}
+Kmeans conflict {'Max': 460, 'Min': 1, 'Type': 885, '%': 0.0885}
+####################
+DR evaluation out_split/model-3-fit/117.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.02118682861328125
+search 1923 queries, time cost =0.044045448303222656
+Doc_code balance {'Avg': 0.42905944172149996, 'Max': 0.5, 'Min': 0.019458544839255465, 'Flat': 0.5}
+Doc_code conflict {'Max': 3138, 'Min': 1, 'Type': 89, '%': 0.0089}
+Kmeans balance {'Avg': 0.8297873287986749, 'Max': 1.0, 'Min': 0.5016920473773265, 'Flat': 0.5059}
+Kmeans conflict {'Max': 395, 'Min': 1, 'Type': 758, '%': 0.0758}
+####################
+DR evaluation out_split/model-3-fit/126.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.02133345603942871
+search 1923 queries, time cost =0.0435025691986084
+Doc_code balance {'Avg': 0.42762500863962, 'Max': 0.5, 'Min': 0.010756586898718834, 'Flat': 0.5}
+Doc_code conflict {'Max': 3149, 'Min': 1, 'Type': 51, '%': 0.0051}
+Kmeans balance {'Avg': 0.8320389246987908, 'Max': 1.0, 'Min': 0.5018703241895262, 'Flat': 0.5156499999999999}
+Kmeans conflict {'Max': 181, 'Min': 1, 'Type': 788, '%': 0.0788}
+####################
+DR evaluation out_split/model-3-fit/135.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021470308303833008
+search 1923 queries, time cost =0.04586625099182129
+Doc_code balance {'Avg': 0.4286287474452968, 'Max': 0.5, 'Min': 0.015591007976794802, 'Flat': 0.5}
+Doc_code conflict {'Max': 2896, 'Min': 1, 'Type': 85, '%': 0.0085}
+Kmeans balance {'Avg': 0.8336228337428543, 'Max': 1.0, 'Min': 0.5012468827930174, 'Flat': 0.5124500000000001}
+Kmeans conflict {'Max': 132, 'Min': 1, 'Type': 706, '%': 0.0706}
+####################
+DR evaluation out_split/model-3-fit/144.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021084070205688477
+search 1923 queries, time cost =0.045484304428100586
+Doc_code balance {'Avg': 0.4279691050101893, 'Max': 0.5, 'Min': 0.0090645395213923, 'Flat': 0.5}
+Doc_code conflict {'Max': 3920, 'Min': 1, 'Type': 57, '%': 0.0057}
+Kmeans balance {'Avg': 0.6573240503872562, 'Max': 1.0, 'Min': 0.5, 'Flat': 0.518}
+Kmeans conflict {'Max': 194, 'Min': 1, 'Type': 702, '%': 0.0702}
+####################
+DR evaluation out_split/model-3-fit/153.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021680116653442383
+search 1923 queries, time cost =0.04555201530456543
+Doc_code balance {'Avg': 0.4294391812204812, 'Max': 0.5, 'Min': 0.022359197486101046, 'Flat': 0.5}
+Doc_code conflict {'Max': 1634, 'Min': 1, 'Type': 94, '%': 0.0094}
+Kmeans balance {'Avg': 0.829808139925119, 'Max': 1.0, 'Min': 0.5018703241895262, 'Flat': 0.5123}
+Kmeans conflict {'Max': 206, 'Min': 1, 'Type': 757, '%': 0.0757}
+####################
+DR evaluation out_split/model-3-fit/162.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021520137786865234
+search 1923 queries, time cost =0.046381235122680664
+Doc_code balance {'Avg': 0.42839189884342915, 'Max': 0.5, 'Min': 0.015107565868987205, 'Flat': 0.5}
+Doc_code conflict {'Max': 3766, 'Min': 1, 'Type': 79, '%': 0.0079}
+Kmeans balance {'Avg': 0.8248414643866707, 'Max': 1.0, 'Min': 0.5037406483790523, 'Flat': 0.5141}
+Kmeans conflict {'Max': 153, 'Min': 1, 'Type': 770, '%': 0.077}
+####################
+DR evaluation out_split/model-3-fit/171.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.020977497100830078
+search 1923 queries, time cost =0.0464320182800293
+Doc_code balance {'Avg': 0.42747539762824954, 'Max': 0.5, 'Min': 0.010756586898718834, 'Flat': 0.5}
+Doc_code conflict {'Max': 3674, 'Min': 1, 'Type': 47, '%': 0.0047}
+Kmeans balance {'Avg': 0.8299126414948841, 'Max': 1.0, 'Min': 0.5031172069825436, 'Flat': 0.51665}
+Kmeans conflict {'Max': 284, 'Min': 1, 'Type': 687, '%': 0.0687}
+####################
+DR evaluation out_split/model-3-fit/180.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021172523498535156
+search 1923 queries, time cost =0.04670572280883789
+Doc_code balance {'Avg': 0.4274654769933289, 'Max': 0.5, 'Min': 0.010756586898718834, 'Flat': 0.5}
+Doc_code conflict {'Max': 3525, 'Min': 1, 'Type': 42, '%': 0.0042}
+Kmeans balance {'Avg': 0.8300795567291467, 'Max': 1.0, 'Min': 0.5012468827930174, 'Flat': 0.5196000000000001}
+Kmeans conflict {'Max': 252, 'Min': 1, 'Type': 694, '%': 0.0694}
+####################
+DR evaluation out_split/model-3-fit/189.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.02058553695678711
+search 1923 queries, time cost =0.04541802406311035
+Doc_code balance {'Avg': 0.42727267067116803, 'Max': 0.5, 'Min': 0.0076142131979695105, 'Flat': 0.5}
+Doc_code conflict {'Max': 4134, 'Min': 1, 'Type': 39, '%': 0.0039}
+Kmeans balance {'Avg': 0.8301304437033075, 'Max': 1.0, 'Min': 0.5053571428571428, 'Flat': 0.51015}
+Kmeans conflict {'Max': 175, 'Min': 1, 'Type': 697, '%': 0.0697}
+####################
+DR evaluation out_split/model-3-fit/198.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021498918533325195
+search 1923 queries, time cost =0.047039031982421875
+Doc_code balance {'Avg': 0.427288359485038, 'Max': 0.5, 'Min': 0.009547981629199898, 'Flat': 0.5}
+Doc_code conflict {'Max': 4032, 'Min': 1, 'Type': 40, '%': 0.004}
+Kmeans balance {'Avg': 0.8288784393010178, 'Max': 1.0, 'Min': 0.5012468827930174, 'Flat': 0.5165500000000001}
+Kmeans conflict {'Max': 193, 'Min': 1, 'Type': 694, '%': 0.0694}
+####################
+DR evaluation out_split/model-3-fit/207.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021003007888793945
+search 1923 queries, time cost =0.046747684478759766
+Doc_code balance {'Avg': 0.4275350725134321, 'Max': 0.5, 'Min': 0.010998307952622688, 'Flat': 0.5}
+Doc_code conflict {'Max': 3510, 'Min': 1, 'Type': 45, '%': 0.0045}
+Kmeans balance {'Avg': 0.8307499328871023, 'Max': 1.0, 'Min': 0.5114817500604303, 'Flat': 0.5184500000000001}
+Kmeans conflict {'Max': 240, 'Min': 1, 'Type': 664, '%': 0.0664}
+####################
+DR evaluation out_split/model-3-fit/216.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021845579147338867
 Initialization complete
-Iteration  0, inertia 5552.144
-Iteration  1, inertia 2635.293
-Iteration  2, inertia 2457.889
-Iteration  3, inertia 2445.607
-Iteration  4, inertia 2440.723
-Iteration  5, inertia 2437.660
-Iteration  6, inertia 2436.104
-Iteration  7, inertia 2435.356
-Iteration  8, inertia 2435.078
-Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.443091e-04
+Iteration  0, inertia 116.487
+Iteration  1, inertia 22.576
+Iteration  2, inertia 9.955
+Iteration  3, inertia 7.869
+Iteration  4, inertia 7.609
+Iteration  5, inertia 7.464
+Iteration  6, inertia 7.331
+Iteration  7, inertia 7.279
+Iteration  8, inertia 7.266
+Iteration  9, inertia 7.260
 Initialization complete
-Iteration  0, inertia 4465.869
-Iteration  1, inertia 2532.897
-Iteration  2, inertia 2476.378
-Iteration  3, inertia 2460.223
-Iteration  4, inertia 2458.212
-Iteration  5, inertia 2457.745
-Converged at iteration 5: center shift 0.000000e+00 within tolerance 1.443091e-04
+Iteration  0, inertia 387259.438
+Iteration  1, inertia 26993.537
+Iteration  2, inertia 2150.745
+Iteration  3, inertia 1757.954
+Iteration  4, inertia 1747.327
+Iteration  5, inertia 1737.689
+Iteration  6, inertia 1730.687
+Iteration  7, inertia 1729.646
+Iteration  8, inertia 1727.397
+Iteration  9, inertia 1725.915
 Initialization complete
-Iteration  0, inertia 7050.688
-Iteration  1, inertia 2795.014
-Iteration  2, inertia 2496.255
-Iteration  3, inertia 2446.805
-Iteration  4, inertia 2435.751
-Iteration  5, inertia 2435.500
-Converged at iteration 5: center shift 0.000000e+00 within tolerance 1.443091e-04
+Iteration  0, inertia 46311876.000
+Iteration  1, inertia 3354448.500
+Iteration  2, inertia 593592.438
+Iteration  3, inertia 473773.312
+Iteration  4, inertia 430970.781
+Iteration  5, inertia 388579.281
+Iteration  6, inertia 363609.625
+Iteration  7, inertia 350689.656
+Iteration  8, inertia 350645.656
+Iteration  9, inertia 350637.500
 Initialization complete
-Iteration  0, inertia 5779.855
-Iteration  1, inertia 2632.674
-Iteration  2, inertia 2467.379
-Iteration  3, inertia 2455.035
-Iteration  4, inertia 2452.347
-Iteration  5, inertia 2450.789
-Iteration  6, inertia 2450.615
-Converged at iteration 6: center shift 0.000000e+00 within tolerance 1.443091e-04
+Iteration  0, inertia 99020288.000
+Iteration  1, inertia 9684952.000
+Iteration  2, inertia 455508.938
+Iteration  3, inertia 273359.250
+Iteration  4, inertia 239827.766
+Iteration  5, inertia 233569.969
+Iteration  6, inertia 233299.891
+Iteration  7, inertia 233151.250
+Iteration  8, inertia 233141.031
+Iteration  9, inertia 233136.562
 Initialization complete
-Iteration  0, inertia 5546.198
-Iteration  1, inertia 2676.612
-Iteration  2, inertia 2508.080
-Iteration  3, inertia 2476.226
-Iteration  4, inertia 2468.940
-Iteration  5, inertia 2465.564
-Iteration  6, inertia 2463.424
-Iteration  7, inertia 2462.346
-Iteration  8, inertia 2461.851
-Iteration  9, inertia 2461.179
+Iteration  0, inertia 122978464.000
+Iteration  1, inertia 7026426.000
+Iteration  2, inertia 218183.266
+Iteration  3, inertia 149631.141
+Iteration  4, inertia 136781.688
+Iteration  5, inertia 134184.406
+Iteration  6, inertia 133112.312
+Iteration  7, inertia 132421.188
+Iteration  8, inertia 131829.641
+Iteration  9, inertia 131358.625
 Initialization complete
-Iteration  0, inertia 4630.362
-Iteration  1, inertia 2543.433
-Iteration  2, inertia 2471.991
-Iteration  3, inertia 2457.680
-Iteration  4, inertia 2452.928
-Iteration  5, inertia 2450.820
-Iteration  6, inertia 2449.627
-Iteration  7, inertia 2447.877
-Iteration  8, inertia 2447.444
-Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.443091e-04
+Iteration  0, inertia 37322400.000
+Iteration  1, inertia 3310404.250
+Iteration  2, inertia 1420561.250
+Iteration  3, inertia 1369707.875
+Iteration  4, inertia 1350707.250
+Iteration  5, inertia 1348328.500
+Iteration  6, inertia 1348055.750
+Iteration  7, inertia 1347665.750
+Iteration  8, inertia 1347599.625
+Iteration  9, inertia 1347570.875
 Initialization complete
-Iteration  0, inertia 4879.273
-Iteration  1, inertia 2586.521
-Iteration  2, inertia 2483.410
-Iteration  3, inertia 2458.408
-Iteration  4, inertia 2448.093
-Iteration  5, inertia 2444.111
-Iteration  6, inertia 2442.839
-Iteration  7, inertia 2442.456
-Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.443091e-04
+Iteration  0, inertia 10993915.000
+Iteration  1, inertia 1117559.500
+Iteration  2, inertia 126414.461
+Iteration  3, inertia 92802.758
+Iteration  4, inertia 79441.391
+Iteration  5, inertia 76266.484
+Iteration  6, inertia 74655.609
+Iteration  7, inertia 73764.000
+Iteration  8, inertia 73553.680
+Iteration  9, inertia 73531.586
 Initialization complete
-Iteration  0, inertia 6996.633
-Iteration  1, inertia 2829.605
-Iteration  2, inertia 2476.606
-Iteration  3, inertia 2449.804
-Iteration  4, inertia 2441.954
-Iteration  5, inertia 2439.323
-Iteration  6, inertia 2437.631
-Iteration  7, inertia 2437.175
-Iteration  8, inertia 2436.930
-Iteration  9, inertia 2436.275
+Iteration  0, inertia 3481382.000
+Iteration  1, inertia 219536.922
+Iteration  2, inertia 39782.641
+Iteration  3, inertia 29879.680
+Iteration  4, inertia 27193.887
+Iteration  5, inertia 25448.781
+Iteration  6, inertia 23673.516
+Iteration  7, inertia 21978.029
+Iteration  8, inertia 21254.336
+Iteration  9, inertia 21088.891
 Initialization complete
-Iteration  0, inertia 4876.579
-Iteration  1, inertia 2608.105
-Iteration  2, inertia 2502.495
-Iteration  3, inertia 2481.760
-Iteration  4, inertia 2475.388
-Iteration  5, inertia 2472.526
-Iteration  6, inertia 2468.393
-Iteration  7, inertia 2466.320
-Iteration  8, inertia 2466.116
-Iteration  9, inertia 2465.969
-Converged at iteration 9: center shift 0.000000e+00 within tolerance 1.443091e-04
-/home/hoangphuc/.conda/envs/pytorch/lib/python3.9/site-packages/joblib/externals/loky/backend/resource_tracker.py:314: UserWarning: resource_tracker: There appear to be 16 leaked semlock objects to clean up at shutdown
-  warnings.warn(
-/home/hoangphuc/.conda/envs/pytorch/lib/python3.9/site-packages/joblib/externals/loky/backend/resource_tracker.py:314: UserWarning: resource_tracker: There appear to be 1 leaked folder objects to clean up at shutdown
-  warnings.warn(
+Iteration  0, inertia 17593.492
+Iteration  1, inertia 2540.379
+Iteration  2, inertia 877.045
+Iteration  3, inertia 743.376
+Iteration  4, inertia 736.673
+Iteration  5, inertia 735.802
+Iteration  6, inertia 735.201
+Iteration  7, inertia 734.910
+Iteration  8, inertia 734.656
+Iteration  9, inertia 734.492
+Initialization complete
+Iteration  0, inertia 3991.433
+Iteration  1, inertia 561.587
+Iteration  2, inertia 525.903
+Iteration  3, inertia 521.227
+Iteration  4, inertia 519.168
+Iteration  5, inertia 518.695
+Iteration  6, inertia 518.357
+Iteration  7, inertia 518.166
+Iteration  8, inertia 518.041
+Iteration  9, inertia 517.979
+Initialization complete
+Iteration  0, inertia 1239947.250
+Iteration  1, inertia 92717.406
+Iteration  2, inertia 8469.581
+Iteration  3, inertia 6027.216
+Iteration  4, inertia 5845.782
+Iteration  5, inertia 5729.805
+Iteration  6, inertia 5466.450
+Iteration  7, inertia 5202.137
+Iteration  8, inertia 5022.622
+Iteration  9, inertia 4950.964
+Initialization complete
+Iteration  0, inertia 216125.719
+Iteration  1, inertia 22929.979
+Iteration  2, inertia 7407.350
+Iteration  3, inertia 7037.393
+Iteration  4, inertia 7013.763
+Iteration  5, inertia 7008.710
+Iteration  6, inertia 7006.172
+Iteration  7, inertia 7005.146
+Iteration  8, inertia 7004.232
+Iteration  9, inertia 7003.890
+Initialization complete
+Iteration  0, inertia 1743551.000
+Iteration  1, inertia 140798.672
+Iteration  2, inertia 7070.759
+Iteration  3, inertia 5290.499
+Iteration  4, inertia 5033.559
+Iteration  5, inertia 4810.442
+Iteration  6, inertia 4526.867
+Iteration  7, inertia 4076.319
+Iteration  8, inertia 3990.320
+Iteration  9, inertia 3894.774
+Initialization complete
+Iteration  0, inertia 1234650.125
+Iteration  1, inertia 96127.219
+Iteration  2, inertia 13080.710
+Iteration  3, inertia 8412.778
+Iteration  4, inertia 7056.449
+Iteration  5, inertia 5647.485
+Iteration  6, inertia 4942.472
+Iteration  7, inertia 4914.733
+Iteration  8, inertia 4853.436
+Iteration  9, inertia 4804.462
+Initialization complete
+Iteration  0, inertia 15122.284
+Iteration  1, inertia 1828.815
+Iteration  2, inertia 1716.121
+Iteration  3, inertia 1695.262
+Iteration  4, inertia 1691.486
+Iteration  5, inertia 1688.692
+Iteration  6, inertia 1687.499
+Iteration  7, inertia 1686.873
+Iteration  8, inertia 1686.615
+Iteration  9, inertia 1686.382
+Initialization complete
+Iteration  0, inertia 338700.844
+Iteration  1, inertia 32817.922
+Iteration  2, inertia 8873.971
+Iteration  3, inertia 8696.869
+Iteration  4, inertia 8510.449
+Iteration  5, inertia 8482.498
+Iteration  6, inertia 8476.580
+Iteration  7, inertia 8473.742
+Iteration  8, inertia 8472.971
+Iteration  9, inertia 8472.606
+Initialization complete
+Iteration  0, inertia 90745.109
+Iteration  1, inertia 9122.493
+Iteration  2, inertia 3433.590
+Iteration  3, inertia 3338.307
+Iteration  4, inertia 3328.693
+Iteration  5, inertia 3325.112
+Iteration  6, inertia 3322.088
+Iteration  7, inertia 3320.789
+Iteration  8, inertia 3320.577
+Iteration  9, inertia 3320.489
+Initialization complete
+Iteration  0, inertia 1331974.250
+Iteration  1, inertia 47481.242
+Iteration  2, inertia 5209.115
+Iteration  3, inertia 4342.415
+Iteration  4, inertia 3917.170
+Iteration  5, inertia 3736.078
+Iteration  6, inertia 3668.361
+Iteration  7, inertia 3644.572
+Iteration  8, inertia 3639.515
+Iteration  9, inertia 3638.468
+Initialization complete
+Iteration  0, inertia 1490274.750
+Iteration  1, inertia 101586.438
+Iteration  2, inertia 16682.492
+Iteration  3, inertia 8311.223
+Iteration  4, inertia 5787.660
+Iteration  5, inertia 5118.145
+Iteration  6, inertia 4704.842
+Iteration  7, inertia 4298.629
+Iteration  8, inertia 3946.826
+Iteration  9, inertia 3770.164
+Initialization complete
+Iteration  0, inertia 1895949.000
+Iteration  1, inertia 156589.984
+Iteration  2, inertia 9136.020
+Iteration  3, inertia 3411.709
+Iteration  4, inertia 2917.945
+Iteration  5, inertia 2826.283
+Iteration  6, inertia 2809.849
+Iteration  7, inertia 2803.471
+Iteration  8, inertia 2798.022
+Iteration  9, inertia 2795.829
+Initialization complete
+Iteration  0, inertia 3237343.000
+Iteration  1, inertia 129951.859
+Iteration  2, inertia 11760.946
+Iteration  3, inertia 8576.336
+Iteration  4, inertia 7195.509
+Iteration  5, inertia 6750.772
+Iteration  6, inertia 6358.663
+Iteration  7, inertia 6163.129
+Iteration  8, inertia 6086.818
+Iteration  9, inertia 6045.085
+Initialization complete
+Iteration  0, inertia 84179.492
+Iteration  1, inertia 7508.280
+Iteration  2, inertia 3322.601
+Iteration  3, inertia 3245.513
+Iteration  4, inertia 3209.871
+Iteration  5, inertia 3196.817
+Iteration  6, inertia 3194.587
+Iteration  7, inertia 3193.694
+Iteration  8, inertia 3193.471
+Iteration  9, inertia 3193.345
+Initialization complete
+Iteration  0, inertia 128060.734
+Iteration  1, inertia 12785.414
+Iteration  2, inertia 4577.046
+Iteration  3, inertia 3517.239
+Iteration  4, inertia 3420.931
+Iteration  5, inertia 3408.760
+Iteration  6, inertia 3404.308
+Iteration  7, inertia 3402.085
+Iteration  8, inertia 3400.712
+Iteration  9, inertia 3400.087
+Initialization complete
+Iteration  0, inertia 1606902.000
+Iteration  1, inertia 83977.766
+Iteration  2, inertia 8989.612
+Iteration  3, inertia 3248.477
+Iteration  4, inertia 2825.686
+Iteration  5, inertia 2705.569
+Iteration  6, inertia 2567.121
+Iteration  7, inertia 2470.009
+Iteration  8, inertia 2432.300
+Iteration  9, inertia 2422.541
+Initialization complete
+Initialization complete
+Iteration  0, inertia 95.573
+Iteration  1, inertia 17.951
+Iteration  2, inertia 8.997
+Iteration  3, inertia 8.065
+Iteration  4, inertia 7.738
+Iteration  5, inertia 7.594
+Iteration  6, inertia 7.533
+Iteration  7, inertia 7.510
+Iteration  8, inertia 7.495
+Iteration  9, inertia 7.487
+Initialization complete
+Iteration  0, inertia 394243.188
+Iteration  1, inertia 27280.383
+Iteration  2, inertia 1988.364
+Iteration  3, inertia 1846.776
+Iteration  4, inertia 1836.246
+Iteration  5, inertia 1829.654
+Iteration  6, inertia 1826.281
+Iteration  7, inertia 1822.164
+Iteration  8, inertia 1822.118
+Iteration  9, inertia 1822.084
+Initialization complete
+Iteration  0, inertia 45178200.000
+Iteration  1, inertia 3332670.750
+Iteration  2, inertia 569209.250
+Iteration  3, inertia 339540.438
+Iteration  4, inertia 287288.594
+Iteration  5, inertia 282101.438
+Iteration  6, inertia 278605.750
+Iteration  7, inertia 277220.812
+Iteration  8, inertia 277211.250
+Iteration  9, inertia 277204.375
+Initialization complete
+Iteration  0, inertia 94496640.000
+Iteration  1, inertia 8506091.000
+Iteration  2, inertia 478947.062
+Iteration  3, inertia 308746.500
+Iteration  4, inertia 275073.656
+Iteration  5, inertia 257655.500
+Iteration  6, inertia 250943.453
+Iteration  7, inertia 245745.219
+Iteration  8, inertia 242983.375
+Iteration  9, inertia 242063.172
+Initialization complete
+Iteration  0, inertia 122300608.000
+Iteration  1, inertia 8172112.500
+Iteration  2, inertia 332863.062
+Iteration  3, inertia 222955.938
+Iteration  4, inertia 160863.172
+Iteration  5, inertia 149491.766
+Iteration  6, inertia 146774.344
+Iteration  7, inertia 144926.656
+Iteration  8, inertia 144044.391
+Iteration  9, inertia 142913.453
+Initialization complete
+Iteration  0, inertia 36923884.000
+Iteration  1, inertia 3251367.000
+Iteration  2, inertia 1422004.500
+Iteration  3, inertia 1354652.250
+Iteration  4, inertia 1345257.875
+Iteration  5, inertia 1341942.125
+Iteration  6, inertia 1340374.500
+Iteration  7, inertia 1340169.500
+Iteration  8, inertia 1340150.125
+Iteration  9, inertia 1340125.750
+Initialization complete
+Iteration  0, inertia 10575153.000
+Iteration  1, inertia 926559.562
+Iteration  2, inertia 121334.984
+Iteration  3, inertia 87698.164
+Iteration  4, inertia 78998.766
+Iteration  5, inertia 75808.625
+Iteration  6, inertia 74548.953
+Iteration  7, inertia 73905.422
+Iteration  8, inertia 73574.047
+Iteration  9, inertia 73509.547
+Initialization complete
+Iteration  0, inertia 3631329.500
+Iteration  1, inertia 299898.625
+Iteration  2, inertia 37974.266
+Iteration  3, inertia 26634.170
+Iteration  4, inertia 24681.184
+Iteration  5, inertia 23969.527
+Iteration  6, inertia 23717.018
+Iteration  7, inertia 23654.641
+Iteration  8, inertia 23606.400
+Iteration  9, inertia 23571.719
+Initialization complete
+Iteration  0, inertia 21738.357
+Iteration  1, inertia 3189.211
+Iteration  2, inertia 974.235
+Iteration  3, inertia 836.365
+Iteration  4, inertia 738.699
+Iteration  5, inertia 734.344
+Iteration  6, inertia 733.585
+Iteration  7, inertia 733.062
+Iteration  8, inertia 732.854
+Iteration  9, inertia 732.731
+Initialization complete
+Iteration  0, inertia 4489.890
+Iteration  1, inertia 587.483
+Iteration  2, inertia 442.047
+Iteration  3, inertia 408.462
+Iteration  4, inertia 407.245
+Iteration  5, inertia 406.844
+Iteration  6, inertia 406.612
+Iteration  7, inertia 406.505
+Iteration  8, inertia 406.429
+Iteration  9, inertia 406.354
+Initialization complete
+Iteration  0, inertia 1259878.500
+Iteration  1, inertia 95882.555
+Iteration  2, inertia 8729.923
+Iteration  3, inertia 6100.526
+Iteration  4, inertia 5855.188
+Iteration  5, inertia 5833.675
+Iteration  6, inertia 5821.386
+Iteration  7, inertia 5798.118
+Iteration  8, inertia 5695.879
+Iteration  9, inertia 5459.125
+Initialization complete
+Iteration  0, inertia 215815.188
+Iteration  1, inertia 22912.547
+Iteration  2, inertia 7683.992
+Iteration  3, inertia 7047.833
+Iteration  4, inertia 6992.350
+Iteration  5, inertia 6978.551
+Iteration  6, inertia 6977.594
+Iteration  7, inertia 6975.687
+Iteration  8, inertia 6974.596
+Iteration  9, inertia 6973.995
+Initialization complete
+Iteration  0, inertia 1787202.250
+Iteration  1, inertia 164826.906
+Iteration  2, inertia 7285.641
+Iteration  3, inertia 3810.804
+Iteration  4, inertia 3531.695
+Iteration  5, inertia 3452.752
+Iteration  6, inertia 3424.747
+Iteration  7, inertia 3378.097
+Iteration  8, inertia 3311.197
+Iteration  9, inertia 3270.073
+Initialization complete
+Iteration  0, inertia 1230054.875
+Iteration  1, inertia 96895.484
+Iteration  2, inertia 14950.076
+Iteration  3, inertia 7965.514
+Iteration  4, inertia 6330.893
+Iteration  5, inertia 5139.633
+Iteration  6, inertia 5070.473
+Iteration  7, inertia 4953.781
+Iteration  8, inertia 4871.598
+Iteration  9, inertia 4775.922
+Initialization complete
+Iteration  0, inertia 15069.266
+Iteration  1, inertia 1821.134
+Iteration  2, inertia 1711.524
+Iteration  3, inertia 1690.481
+Iteration  4, inertia 1685.972
+Iteration  5, inertia 1685.360
+Iteration  6, inertia 1684.487
+Iteration  7, inertia 1684.082
+Iteration  8, inertia 1683.943
+Iteration  9, inertia 1683.855
+Initialization complete
+Iteration  0, inertia 337906.750
+Iteration  1, inertia 32381.059
+Iteration  2, inertia 8724.400
+Iteration  3, inertia 8585.230
+Iteration  4, inertia 8553.732
+Iteration  5, inertia 8547.564
+Iteration  6, inertia 8542.778
+Iteration  7, inertia 8541.031
+Iteration  8, inertia 8540.409
+Iteration  9, inertia 8540.058
+Initialization complete
+Iteration  0, inertia 91442.094
+Iteration  1, inertia 9071.566
+Iteration  2, inertia 3425.665
+Iteration  3, inertia 3371.484
+Iteration  4, inertia 3364.055
+Iteration  5, inertia 3361.343
+Iteration  6, inertia 3360.315
+Iteration  7, inertia 3359.611
+Iteration  8, inertia 3359.377
+Iteration  9, inertia 3358.955
+Initialization complete
+Iteration  0, inertia 1512501.375
+Iteration  1, inertia 98829.281
+Iteration  2, inertia 6663.072
+Iteration  3, inertia 5233.344
+Iteration  4, inertia 4806.268
+Iteration  5, inertia 4477.421
+Iteration  6, inertia 4153.708
+Iteration  7, inertia 3984.628
+Iteration  8, inertia 3901.776
+Iteration  9, inertia 3863.210
+Initialization complete
+Iteration  0, inertia 1555419.125
+Iteration  1, inertia 115285.039
+Iteration  2, inertia 6939.604
+Iteration  3, inertia 3734.295
+Iteration  4, inertia 3596.465
+Iteration  5, inertia 3539.801
+Iteration  6, inertia 3500.318
+Iteration  7, inertia 3491.168
+Iteration  8, inertia 3487.387
+Iteration  9, inertia 3484.726
+Initialization complete
+Iteration  0, inertia 1941380.500
+Iteration  1, inertia 160474.672
+Iteration  2, inertia 7599.559
+Iteration  3, inertia 3303.590
+Iteration  4, inertia 2876.407
+Iteration  5, inertia 2774.664
+Iteration  6, inertia 2733.719
+Iteration  7, inertia 2700.368
+Iteration  8, inertia 2698.902
+Iteration  9, inertia 2696.792
+Initialization complete
+Iteration  0, inertia 3155792.000
+Iteration  1, inertia 92161.781
+Iteration  2, inertia 10127.343
+Iteration  3, inertia 7485.505
+Iteration  4, inertia 6476.466
+Iteration  5, inertia 6154.591
+Iteration  6, inertia 5981.722
+Iteration  7, inertia 5723.219
+Iteration  8, inertia 5461.844
+Iteration  9, inertia 5235.871
+Initialization complete
+Iteration  0, inertia 83008.820
+Iteration  1, inertia 7315.464
+Iteration  2, inertia 3327.149
+Iteration  3, inertia 3226.027
+Iteration  4, inertia 3205.752
+Iteration  5, inertia 3196.005
+Iteration  6, inertia 3190.548
+Iteration  7, inertia 3188.277
+Iteration  8, inertia 3187.964
+Iteration  9, inertia 3187.762
+Initialization complete
+Iteration  0, inertia 126886.062
+Iteration  1, inertia 12193.769
+Iteration  2, inertia 5462.188
+Iteration  3, inertia 4504.208
+Iteration  4, inertia 3744.435
+Iteration  5, inertia 3520.874
+Iteration  6, inertia 3506.301
+Iteration  7, inertia 3503.837
+Iteration  8, inertia 3503.417
+Iteration  9, inertia 3503.238
+Initialization complete
+Iteration  0, inertia 1667069.000
+Iteration  1, inertia 117608.320
+Iteration  2, inertia 4243.421
+Iteration  3, inertia 1869.267
+Iteration  4, inertia 1623.291
+Iteration  5, inertia 1600.758
+Iteration  6, inertia 1584.993
+Iteration  7, inertia 1580.188
+Iteration  8, inertia 1578.727
+Iteration  9, inertia 1577.918
+Initialization complete
+Initialization complete
+Iteration  0, inertia 101.830
+Iteration  1, inertia 18.454
+Iteration  2, inertia 9.027
+Iteration  3, inertia 7.712
+Iteration  4, inertia 7.306
+Iteration  5, inertia 7.103
+Iteration  6, inertia 7.048
+Iteration  7, inertia 7.035
+Iteration  8, inertia 7.025
+Iteration  9, inertia 7.019
+Initialization complete
+Iteration  0, inertia 393896.781
+Iteration  1, inertia 29663.512
+Iteration  2, inertia 3249.122
+Iteration  3, inertia 1831.026
+Iteration  4, inertia 1728.288
+Iteration  5, inertia 1726.548
+Iteration  6, inertia 1725.595
+Iteration  7, inertia 1724.490
+Iteration  8, inertia 1723.995
+Iteration  9, inertia 1723.563
+Initialization complete
+Iteration  0, inertia 46406820.000
+Iteration  1, inertia 4330432.000
+Iteration  2, inertia 409762.469
+Iteration  3, inertia 277855.219
+Iteration  4, inertia 248031.375
+Iteration  5, inertia 241153.344
+Iteration  6, inertia 240945.656
+Iteration  7, inertia 240848.906
+Iteration  8, inertia 240837.969
+Iteration  9, inertia 240837.688
+Initialization complete
+Iteration  0, inertia 96815504.000
+Iteration  1, inertia 9256689.000
+Iteration  2, inertia 410876.406
+Iteration  3, inertia 278765.625
+Iteration  4, inertia 235324.938
+Iteration  5, inertia 220288.875
+Iteration  6, inertia 219506.891
+Iteration  7, inertia 219458.094
+Iteration  8, inertia 219446.141
+Iteration  9, inertia 219442.562
+Initialization complete
+Iteration  0, inertia 116882560.000
+Iteration  1, inertia 6191663.000
+Iteration  2, inertia 283229.281
+Iteration  3, inertia 203716.906
+Iteration  4, inertia 148202.000
+Iteration  5, inertia 137682.266
+Iteration  6, inertia 136559.672
+Iteration  7, inertia 135297.359
+Iteration  8, inertia 133851.781
+Iteration  9, inertia 133258.000
+Initialization complete
+Iteration  0, inertia 38094512.000
+Iteration  1, inertia 3549785.500
+Iteration  2, inertia 1417211.250
+Iteration  3, inertia 1354133.250
+Iteration  4, inertia 1344534.500
+Iteration  5, inertia 1342522.750
+Iteration  6, inertia 1341600.000
+Iteration  7, inertia 1341300.250
+Iteration  8, inertia 1341298.000
+Iteration  9, inertia 1340693.500
+Initialization complete
+Iteration  0, inertia 11130417.000
+Iteration  1, inertia 921345.438
+Iteration  2, inertia 121475.695
+Iteration  3, inertia 93893.078
+Iteration  4, inertia 83720.648
+Iteration  5, inertia 79871.648
+Iteration  6, inertia 78447.984
+Iteration  7, inertia 77194.570
+Iteration  8, inertia 76653.227
+Iteration  9, inertia 76425.016
+Initialization complete
+Iteration  0, inertia 3633742.500
+Iteration  1, inertia 300280.562
+Iteration  2, inertia 43611.695
+Iteration  3, inertia 29488.258
+Iteration  4, inertia 26635.480
+Iteration  5, inertia 24695.822
+Iteration  6, inertia 23447.980
+Iteration  7, inertia 22550.895
+Iteration  8, inertia 22263.424
+Iteration  9, inertia 22109.891
+Initialization complete
+Iteration  0, inertia 19904.742
+Iteration  1, inertia 2372.576
+Iteration  2, inertia 857.321
+Iteration  3, inertia 793.083
+Iteration  4, inertia 783.007
+Iteration  5, inertia 789.556
+Iteration  6, inertia 735.615
+Iteration  7, inertia 731.212
+Iteration  8, inertia 729.592
+Iteration  9, inertia 729.042
+Initialization complete
+Iteration  0, inertia 4974.148
+Iteration  1, inertia 622.306
+Iteration  2, inertia 529.116
+Iteration  3, inertia 521.132
+Iteration  4, inertia 519.210
+Iteration  5, inertia 518.488
+Iteration  6, inertia 518.153
+Iteration  7, inertia 517.859
+Iteration  8, inertia 517.643
+Iteration  9, inertia 517.543
+Initialization complete
+Iteration  0, inertia 1252704.625
+Iteration  1, inertia 100039.422
+Iteration  2, inertia 10666.233
+Iteration  3, inertia 6131.375
+Iteration  4, inertia 5605.378
+Iteration  5, inertia 5383.521
+Iteration  6, inertia 5181.550
+Iteration  7, inertia 5057.949
+Iteration  8, inertia 4999.145
+Iteration  9, inertia 4992.438
+Initialization complete
+Iteration  0, inertia 215435.641
+Iteration  1, inertia 22737.953
+Iteration  2, inertia 7329.298
+Iteration  3, inertia 7055.934
+Iteration  4, inertia 7011.583
+Iteration  5, inertia 6971.562
+Iteration  6, inertia 6964.917
+Iteration  7, inertia 6963.854
+Iteration  8, inertia 6962.956
+Iteration  9, inertia 6961.990
+Initialization complete
+Iteration  0, inertia 1671020.000
+Iteration  1, inertia 128019.047
+Iteration  2, inertia 8416.443
+Iteration  3, inertia 4951.124
+Iteration  4, inertia 4190.114
+Iteration  5, inertia 3915.780
+Iteration  6, inertia 3816.506
+Iteration  7, inertia 3770.307
+Iteration  8, inertia 3695.683
+Iteration  9, inertia 3630.905
+Initialization complete
+Iteration  0, inertia 1238990.750
+Iteration  1, inertia 101778.898
+Iteration  2, inertia 12777.102
+Iteration  3, inertia 8281.093
+Iteration  4, inertia 6921.304
+Iteration  5, inertia 5557.609
+Iteration  6, inertia 4848.507
+Iteration  7, inertia 4799.933
+Iteration  8, inertia 4741.942
+Iteration  9, inertia 4685.179
+Initialization complete
+Iteration  0, inertia 14970.255
+Iteration  1, inertia 1827.358
+Iteration  2, inertia 1713.226
+Iteration  3, inertia 1691.177
+Iteration  4, inertia 1686.913
+Iteration  5, inertia 1684.573
+Iteration  6, inertia 1683.328
+Iteration  7, inertia 1682.864
+Iteration  8, inertia 1682.710
+Iteration  9, inertia 1682.597
+Initialization complete
+Iteration  0, inertia 335074.031
+Iteration  1, inertia 32455.535
+Iteration  2, inertia 8889.516
+Iteration  3, inertia 8575.090
+Iteration  4, inertia 8501.885
+Iteration  5, inertia 8475.462
+Iteration  6, inertia 8470.498
+Iteration  7, inertia 8470.000
+Iteration  8, inertia 8469.628
+Iteration  9, inertia 8469.312
+Initialization complete
+Iteration  0, inertia 91662.641
+Iteration  1, inertia 9006.553
+Iteration  2, inertia 3552.701
+Iteration  3, inertia 3375.319
+Iteration  4, inertia 3367.792
+Iteration  5, inertia 3365.508
+Iteration  6, inertia 3364.663
+Iteration  7, inertia 3364.298
+Iteration  8, inertia 3364.140
+Iteration  9, inertia 3364.040
+Initialization complete
+Iteration  0, inertia 1380321.750
+Iteration  1, inertia 60244.805
+Iteration  2, inertia 6661.624
+Iteration  3, inertia 4979.112
+Iteration  4, inertia 4587.526
+Iteration  5, inertia 4415.989
+Iteration  6, inertia 4205.637
+Iteration  7, inertia 4043.524
+Iteration  8, inertia 3963.749
+Iteration  9, inertia 3949.222
+Initialization complete
+Iteration  0, inertia 1499331.500
+Iteration  1, inertia 83303.078
+Iteration  2, inertia 18971.814
+Iteration  3, inertia 11212.025
+Iteration  4, inertia 6827.018
+Iteration  5, inertia 5487.621
+Iteration  6, inertia 5184.189
+Iteration  7, inertia 4762.314
+Iteration  8, inertia 4348.220
+Iteration  9, inertia 3997.757
+Initialization complete
+Iteration  0, inertia 2037646.750
+Iteration  1, inertia 161104.797
+Iteration  2, inertia 10865.180
+Iteration  3, inertia 3243.240
+Iteration  4, inertia 2836.367
+Iteration  5, inertia 2783.990
+Iteration  6, inertia 2772.234
+Iteration  7, inertia 2769.160
+Iteration  8, inertia 2767.944
+Iteration  9, inertia 2767.534
+Initialization complete
+Iteration  0, inertia 3129107.000
+Iteration  1, inertia 83413.211
+Iteration  2, inertia 10246.168
+Iteration  3, inertia 7589.179
+Iteration  4, inertia 6572.072
+Iteration  5, inertia 6163.668
+Iteration  6, inertia 5940.636
+Iteration  7, inertia 5745.825
+Iteration  8, inertia 5660.571
+Iteration  9, inertia 5632.034
+Initialization complete
+Iteration  0, inertia 84913.570
+Iteration  1, inertia 7613.949
+Iteration  2, inertia 3370.767
+Iteration  3, inertia 3208.270
+Iteration  4, inertia 3194.542
+Iteration  5, inertia 3189.976
+Iteration  6, inertia 3189.166
+Iteration  7, inertia 3188.667
+Iteration  8, inertia 3188.464
+Iteration  9, inertia 3188.364
+Initialization complete
+Iteration  0, inertia 128805.586
+Iteration  1, inertia 12569.111
+Iteration  2, inertia 4323.630
+Iteration  3, inertia 3449.193
+Iteration  4, inertia 3351.490
+Iteration  5, inertia 3333.314
+Iteration  6, inertia 3328.814
+Iteration  7, inertia 3328.250
+Iteration  8, inertia 3327.698
+Iteration  9, inertia 3327.295
+Initialization complete
+Iteration  0, inertia 1646160.250
+Iteration  1, inertia 83623.172
+Iteration  2, inertia 10992.593
+Iteration  3, inertia 4659.524
+Iteration  4, inertia 3158.195
+Iteration  5, inertia 2753.665
+Iteration  6, inertia 2556.830
+Iteration  7, inertia 2496.151
+Iteration  8, inertia 2484.121
+Iteration  9, inertia 2463.804
+Initialization complete
+Initialization complete
+Iteration  0, inertia 98.405
+Iteration  1, inertia 18.816
+Iteration  2, inertia 8.654
+Iteration  3, inertia 7.846
+Iteration  4, inertia 7.600
+Iteration  5, inertia 7.445
+Iteration  6, inertia 7.380
+Iteration  7, inertia 7.332
+Iteration  8, inertia 7.311
+Iteration  9, inertia 7.294
+Initialization complete
+Iteration  0, inertia 395758.094
+Iteration  1, inertia 29527.883
+Iteration  2, inertia 2670.236
+Iteration  3, inertia 1750.863
+Iteration  4, inertia 1745.695
+Iteration  5, inertia 1744.340
+Iteration  6, inertia 1741.742
+Iteration  7, inertia 1740.500
+Iteration  8, inertia 1740.044
+Iteration  9, inertia 1739.883
+Initialization complete
+Iteration  0, inertia 46254308.000
+Iteration  1, inertia 3356668.000
+Iteration  2, inertia 582980.500
+Iteration  3, inertia 478348.656
+Iteration  4, inertia 428182.812
+Iteration  5, inertia 388425.250
+Iteration  6, inertia 363905.656
+Iteration  7, inertia 352099.750
+Iteration  8, inertia 352099.156
+Iteration  9, inertia 352098.938
+Initialization complete
+Iteration  0, inertia 100146808.000
+Iteration  1, inertia 9718516.000
+Iteration  2, inertia 423684.250
+Iteration  3, inertia 268606.969
+Iteration  4, inertia 237171.078
+Iteration  5, inertia 229832.562
+Iteration  6, inertia 227448.281
+Iteration  7, inertia 225443.969
+Iteration  8, inertia 224670.672
+Iteration  9, inertia 224668.016
+Initialization complete
+Iteration  0, inertia 121555248.000
+Iteration  1, inertia 5469872.500
+Iteration  2, inertia 247195.000
+Iteration  3, inertia 166011.312
+Iteration  4, inertia 151117.297
+Iteration  5, inertia 139430.094
+Iteration  6, inertia 132700.250
+Iteration  7, inertia 131642.062
+Iteration  8, inertia 131165.109
+Iteration  9, inertia 130667.516
+Initialization complete
+Iteration  0, inertia 37292568.000
+Iteration  1, inertia 3466440.000
+Iteration  2, inertia 1434427.125
+Iteration  3, inertia 1372148.875
+Iteration  4, inertia 1356868.000
+Iteration  5, inertia 1348293.000
+Iteration  6, inertia 1345279.375
+Iteration  7, inertia 1343955.500
+Iteration  8, inertia 1342346.375
+Iteration  9, inertia 1342050.625
+Initialization complete
+Iteration  0, inertia 10860465.000
+Iteration  1, inertia 793119.375
+Iteration  2, inertia 141211.953
+Iteration  3, inertia 110219.922
+Iteration  4, inertia 99143.953
+Iteration  5, inertia 94351.938
+Iteration  6, inertia 90049.234
+Iteration  7, inertia 87724.719
+Iteration  8, inertia 86117.789
+Iteration  9, inertia 84250.453
+Initialization complete
+Iteration  0, inertia 3574935.500
+Iteration  1, inertia 312012.438
+Iteration  2, inertia 40171.387
+Iteration  3, inertia 29486.980
+Iteration  4, inertia 24544.953
+Iteration  5, inertia 21860.943
+Iteration  6, inertia 21111.934
+Iteration  7, inertia 20981.754
+Iteration  8, inertia 20976.953
+Iteration  9, inertia 20972.400
+Initialization complete
+Iteration  0, inertia 17932.676
+Iteration  1, inertia 2418.664
+Iteration  2, inertia 1205.913
+Iteration  3, inertia 775.897
+Iteration  4, inertia 736.281
+Iteration  5, inertia 731.769
+Iteration  6, inertia 729.835
+Iteration  7, inertia 728.771
+Iteration  8, inertia 728.186
+Iteration  9, inertia 727.996
+Initialization complete
+Iteration  0, inertia 4474.251
+Iteration  1, inertia 596.062
+Iteration  2, inertia 526.383
+Iteration  3, inertia 521.167
+Iteration  4, inertia 519.942
+Iteration  5, inertia 519.519
+Iteration  6, inertia 519.212
+Iteration  7, inertia 519.013
+Iteration  8, inertia 518.864
+Iteration  9, inertia 518.763
+Initialization complete
+Iteration  0, inertia 1249258.625
+Iteration  1, inertia 95902.492
+Iteration  2, inertia 11436.561
+Iteration  3, inertia 6357.157
+Iteration  4, inertia 5421.152
+Iteration  5, inertia 5090.267
+Iteration  6, inertia 4943.451
+Iteration  7, inertia 4907.381
+Iteration  8, inertia 4881.032
+Iteration  9, inertia 4849.156
+Initialization complete
+Iteration  0, inertia 216965.422
+Iteration  1, inertia 23054.340
+Iteration  2, inertia 7392.009
+Iteration  3, inertia 7048.104
+Iteration  4, inertia 7003.418
+Iteration  5, inertia 6996.242
+Iteration  6, inertia 6993.453
+Iteration  7, inertia 6990.627
+Iteration  8, inertia 6989.852
+Iteration  9, inertia 6989.458
+Initialization complete
+Iteration  0, inertia 1754311.500
+Iteration  1, inertia 126691.609
+Iteration  2, inertia 14942.994
+Iteration  3, inertia 6011.964
+Iteration  4, inertia 5635.231
+Iteration  5, inertia 5428.491
+Iteration  6, inertia 5270.511
+Iteration  7, inertia 5011.770
+Iteration  8, inertia 4559.817
+Iteration  9, inertia 4255.223
+Initialization complete
+Iteration  0, inertia 1233454.125
+Iteration  1, inertia 98058.719
+Iteration  2, inertia 13007.396
+Iteration  3, inertia 8417.512
+Iteration  4, inertia 8082.172
+Iteration  5, inertia 7868.573
+Iteration  6, inertia 5682.808
+Iteration  7, inertia 4930.220
+Iteration  8, inertia 4764.371
+Iteration  9, inertia 4666.248
+Initialization complete
+Iteration  0, inertia 15107.485
+Iteration  1, inertia 1824.018
+Iteration  2, inertia 1715.770
+Iteration  3, inertia 1692.410
+Iteration  4, inertia 1687.923
+Iteration  5, inertia 1685.656
+Iteration  6, inertia 1684.071
+Iteration  7, inertia 1683.434
+Iteration  8, inertia 1682.997
+Iteration  9, inertia 1682.829
+Initialization complete
+Iteration  0, inertia 337858.594
+Iteration  1, inertia 32230.877
+Iteration  2, inertia 8745.907
+Iteration  3, inertia 8600.050
+Iteration  4, inertia 8556.459
+Iteration  5, inertia 8544.438
+Iteration  6, inertia 8542.083
+Iteration  7, inertia 8541.129
+Iteration  8, inertia 8540.769
+Iteration  9, inertia 8540.620
+Initialization complete
+Iteration  0, inertia 91487.031
+Iteration  1, inertia 8855.682
+Iteration  2, inertia 3470.712
+Iteration  3, inertia 3380.834
+Iteration  4, inertia 3359.431
+Iteration  5, inertia 3320.373
+Iteration  6, inertia 3296.740
+Iteration  7, inertia 3293.486
+Iteration  8, inertia 3293.018
+Iteration  9, inertia 3292.797
+Initialization complete
+Iteration  0, inertia 1216358.250
+Iteration  1, inertia 60628.398
+Iteration  2, inertia 6180.677
+Iteration  3, inertia 4949.121
+Iteration  4, inertia 4537.032
+Iteration  5, inertia 4151.222
+Iteration  6, inertia 3923.827
+Iteration  7, inertia 3816.491
+Iteration  8, inertia 3796.086
+Iteration  9, inertia 3791.777
+Initialization complete
+Iteration  0, inertia 1514333.500
+Iteration  1, inertia 113256.078
+Iteration  2, inertia 4306.341
+Iteration  3, inertia 3181.091
+Iteration  4, inertia 3044.301
+Iteration  5, inertia 3003.117
+Iteration  6, inertia 2975.921
+Iteration  7, inertia 2966.641
+Iteration  8, inertia 2965.896
+Iteration  9, inertia 2953.826
+Initialization complete
+Iteration  0, inertia 2006578.750
+Iteration  1, inertia 155118.438
+Iteration  2, inertia 7289.125
+Iteration  3, inertia 3159.707
+Iteration  4, inertia 2815.120
+Iteration  5, inertia 2721.004
+Iteration  6, inertia 2665.586
+Iteration  7, inertia 2655.795
+Iteration  8, inertia 2653.326
+Iteration  9, inertia 2652.637
+Initialization complete
+Iteration  0, inertia 3209943.000
+Iteration  1, inertia 110543.391
+Iteration  2, inertia 12893.205
+Iteration  3, inertia 9202.414
+Iteration  4, inertia 7838.763
+Iteration  5, inertia 7262.164
+Iteration  6, inertia 6772.801
+Iteration  7, inertia 6587.812
+Iteration  8, inertia 6491.385
+Iteration  9, inertia 6342.752
+Initialization complete
+Iteration  0, inertia 84593.469
+Iteration  1, inertia 7770.426
+Iteration  2, inertia 3356.069
+Iteration  3, inertia 3224.175
+Iteration  4, inertia 3206.768
+Iteration  5, inertia 3202.350
+Iteration  6, inertia 3200.324
+Iteration  7, inertia 3198.532
+Iteration  8, inertia 3198.015
+Iteration  9, inertia 3197.554
+Initialization complete
+Iteration  0, inertia 142577.547
+Iteration  1, inertia 13706.583
+Iteration  2, inertia 3564.243
+Iteration  3, inertia 3346.596
+Iteration  4, inertia 3324.110
+Iteration  5, inertia 3314.112
+Iteration  6, inertia 3310.659
+Iteration  7, inertia 3308.944
+Iteration  8, inertia 3308.062
+Iteration  9, inertia 3307.444
+Initialization complete
+Iteration  0, inertia 1659665.000
+Iteration  1, inertia 111299.180
+Iteration  2, inertia 5405.269
+Iteration  3, inertia 2535.325
+Iteration  4, inertia 2245.831
+Iteration  5, inertia 2129.494
+Iteration  6, inertia 2006.371
+Iteration  7, inertia 1890.979
+Iteration  8, inertia 1864.032
+Iteration  9, inertia 1850.407
+Initialization complete
+Initialization complete
+Iteration  0, inertia 107.730
+Iteration  1, inertia 19.022
+Iteration  2, inertia 8.596
+Iteration  3, inertia 7.834
+Iteration  4, inertia 7.377
+Iteration  5, inertia 7.237
+Iteration  6, inertia 7.169
+Iteration  7, inertia 7.144
+Iteration  8, inertia 7.124
+Iteration  9, inertia 7.109
+Initialization complete
+Iteration  0, inertia 392860.594
+Iteration  1, inertia 25625.584
+Iteration  2, inertia 2829.625
+Iteration  3, inertia 2266.712
+Iteration  4, inertia 2226.491
+Iteration  5, inertia 2122.495
+Iteration  6, inertia 1904.283
+Iteration  7, inertia 1847.629
+Iteration  8, inertia 1840.233
+Iteration  9, inertia 1837.059
+Initialization complete
+Iteration  0, inertia 45105920.000
+Iteration  1, inertia 3333971.750
+Iteration  2, inertia 577062.625
+Iteration  3, inertia 350406.188
+Iteration  4, inertia 291700.906
+Iteration  5, inertia 282564.938
+Iteration  6, inertia 281552.219
+Iteration  7, inertia 277498.438
+Iteration  8, inertia 276538.594
+Iteration  9, inertia 276532.688
+Initialization complete
+Iteration  0, inertia 96902352.000
+Iteration  1, inertia 9355851.000
+Iteration  2, inertia 408673.844
+Iteration  3, inertia 265648.812
+Iteration  4, inertia 236903.906
+Iteration  5, inertia 227281.328
+Iteration  6, inertia 225745.281
+Iteration  7, inertia 225582.094
+Iteration  8, inertia 225580.359
+Iteration  9, inertia 225578.672
+Initialization complete
+Iteration  0, inertia 113549768.000
+Iteration  1, inertia 6065898.000
+Iteration  2, inertia 200589.984
+Iteration  3, inertia 154178.609
+Iteration  4, inertia 141328.266
+Iteration  5, inertia 135436.344
+Iteration  6, inertia 133583.125
+Iteration  7, inertia 132689.156
+Iteration  8, inertia 132264.281
+Iteration  9, inertia 132283.234
+Initialization complete
+Iteration  0, inertia 37422312.000
+Iteration  1, inertia 3581333.500
+Iteration  2, inertia 1393493.625
+Iteration  3, inertia 1351776.125
+Iteration  4, inertia 1347121.000
+Iteration  5, inertia 1344597.375
+Iteration  6, inertia 1343631.625
+Iteration  7, inertia 1342755.625
+Iteration  8, inertia 1342657.750
+Iteration  9, inertia 1342588.875
+Initialization complete
+Iteration  0, inertia 10829102.000
+Iteration  1, inertia 1028824.062
+Iteration  2, inertia 122183.938
+Iteration  3, inertia 81198.391
+Iteration  4, inertia 73410.477
+Iteration  5, inertia 71632.141
+Iteration  6, inertia 70886.055
+Iteration  7, inertia 70422.930
+Iteration  8, inertia 70346.516
+Iteration  9, inertia 70184.188
+Initialization complete
+Iteration  0, inertia 3680209.500
+Iteration  1, inertia 259375.969
+Iteration  2, inertia 44119.398
+Iteration  3, inertia 29291.557
+Iteration  4, inertia 26373.135
+Iteration  5, inertia 24957.455
+Iteration  6, inertia 24118.727
+Iteration  7, inertia 23048.100
+Iteration  8, inertia 22407.078
+Iteration  9, inertia 21839.701
+Initialization complete
+Iteration  0, inertia 20509.449
+Iteration  1, inertia 2624.584
+Iteration  2, inertia 794.587
+Iteration  3, inertia 746.448
+Iteration  4, inertia 738.775
+Iteration  5, inertia 732.316
+Iteration  6, inertia 728.818
+Iteration  7, inertia 727.488
+Iteration  8, inertia 727.053
+Iteration  9, inertia 726.876
+Initialization complete
+Iteration  0, inertia 4484.853
+Iteration  1, inertia 611.073
+Iteration  2, inertia 527.284
+Iteration  3, inertia 521.614
+Iteration  4, inertia 520.406
+Iteration  5, inertia 519.964
+Iteration  6, inertia 519.713
+Iteration  7, inertia 519.559
+Iteration  8, inertia 519.471
+Iteration  9, inertia 519.412
+Initialization complete
+Iteration  0, inertia 1267683.875
+Iteration  1, inertia 95065.242
+Iteration  2, inertia 11042.255
+Iteration  3, inertia 6255.380
+Iteration  4, inertia 5837.558
+Iteration  5, inertia 5817.293
+Iteration  6, inertia 5804.220
+Iteration  7, inertia 5781.326
+Iteration  8, inertia 5678.769
+Iteration  9, inertia 5438.391
+Initialization complete
+Iteration  0, inertia 215355.766
+Iteration  1, inertia 22828.723
+Iteration  2, inertia 7099.611
+Iteration  3, inertia 6982.955
+Iteration  4, inertia 6965.343
+Iteration  5, inertia 6958.360
+Iteration  6, inertia 6955.225
+Iteration  7, inertia 6953.132
+Iteration  8, inertia 6952.106
+Iteration  9, inertia 6951.613
+Initialization complete
+Iteration  0, inertia 1771690.875
+Iteration  1, inertia 129307.406
+Iteration  2, inertia 15846.311
+Iteration  3, inertia 9425.241
+Iteration  4, inertia 8318.817
+Iteration  5, inertia 7213.105
+Iteration  6, inertia 6583.573
+Iteration  7, inertia 6202.643
+Iteration  8, inertia 5501.954
+Iteration  9, inertia 5268.036
+Initialization complete
+Iteration  0, inertia 1220221.500
+Iteration  1, inertia 95444.070
+Iteration  2, inertia 15204.836
+Iteration  3, inertia 7668.926
+Iteration  4, inertia 5590.241
+Iteration  5, inertia 4946.366
+Iteration  6, inertia 4805.710
+Iteration  7, inertia 4621.073
+Iteration  8, inertia 4594.101
+Iteration  9, inertia 4587.103
+Initialization complete
+Iteration  0, inertia 15036.506
+Iteration  1, inertia 1811.945
+Iteration  2, inertia 1709.609
+Iteration  3, inertia 1691.350
+Iteration  4, inertia 1688.877
+Iteration  5, inertia 1687.841
+Iteration  6, inertia 1687.441
+Iteration  7, inertia 1687.179
+Iteration  8, inertia 1686.976
+Iteration  9, inertia 1686.703
+Initialization complete
+Iteration  0, inertia 337884.969
+Iteration  1, inertia 32531.477
+Iteration  2, inertia 8654.491
+Iteration  3, inertia 8504.558
+Iteration  4, inertia 8484.316
+Iteration  5, inertia 8479.750
+Iteration  6, inertia 8477.675
+Iteration  7, inertia 8475.742
+Iteration  8, inertia 8475.406
+Iteration  9, inertia 8475.184
+Initialization complete
+Iteration  0, inertia 90726.609
+Iteration  1, inertia 8878.530
+Iteration  2, inertia 3406.062
+Iteration  3, inertia 3246.005
+Iteration  4, inertia 3230.746
+Iteration  5, inertia 3226.746
+Iteration  6, inertia 3225.440
+Iteration  7, inertia 3224.887
+Iteration  8, inertia 3224.682
+Iteration  9, inertia 3224.405
+Initialization complete
+Iteration  0, inertia 1478092.000
+Iteration  1, inertia 55732.016
+Iteration  2, inertia 5423.181
+Iteration  3, inertia 4447.263
+Iteration  4, inertia 4166.854
+Iteration  5, inertia 4093.098
+Iteration  6, inertia 4076.523
+Iteration  7, inertia 4067.420
+Iteration  8, inertia 4062.275
+Iteration  9, inertia 4058.059
+Initialization complete
+Iteration  0, inertia 1575871.875
+Iteration  1, inertia 109985.344
+Iteration  2, inertia 10328.057
+Iteration  3, inertia 4015.180
+Iteration  4, inertia 3805.597
+Iteration  5, inertia 3583.646
+Iteration  6, inertia 3539.356
+Iteration  7, inertia 3528.996
+Iteration  8, inertia 3525.822
+Iteration  9, inertia 3517.344
+Initialization complete
+Iteration  0, inertia 1968256.000
+Iteration  1, inertia 159181.766
+Iteration  2, inertia 9715.621
+Iteration  3, inertia 3647.004
+Iteration  4, inertia 2971.313
+Iteration  5, inertia 2903.318
+Iteration  6, inertia 2882.982
+Iteration  7, inertia 2852.854
+Iteration  8, inertia 2815.425
+Iteration  9, inertia 2788.098
+Initialization complete
+Iteration  0, inertia 3155852.000
+Iteration  1, inertia 98062.984
+Iteration  2, inertia 10093.600
+Iteration  3, inertia 7862.477
+Iteration  4, inertia 7103.322
+Iteration  5, inertia 6832.134
+Iteration  6, inertia 6760.126
+Iteration  7, inertia 6697.085
+Iteration  8, inertia 6631.486
+Iteration  9, inertia 6581.110
+Initialization complete
+Iteration  0, inertia 82911.438
+Iteration  1, inertia 7479.479
+Iteration  2, inertia 3374.415
+Iteration  3, inertia 3256.542
+Iteration  4, inertia 3218.289
+Iteration  5, inertia 3198.550
+Iteration  6, inertia 3192.261
+Iteration  7, inertia 3189.535
+Iteration  8, inertia 3188.423
+Iteration  9, inertia 3188.214
+Initialization complete
+Iteration  0, inertia 135736.672
+Iteration  1, inertia 13141.326
+Iteration  2, inertia 3885.219
+Iteration  3, inertia 3439.154
+Iteration  4, inertia 3345.303
+Iteration  5, inertia 3322.417
+Iteration  6, inertia 3319.616
+Iteration  7, inertia 3319.267
+Iteration  8, inertia 3317.854
+Iteration  9, inertia 3317.638
+Initialization complete
+Iteration  0, inertia 1643193.750
+Iteration  1, inertia 120352.492
+Iteration  2, inertia 6207.738
+Iteration  3, inertia 1949.684
+Iteration  4, inertia 1536.215
+Iteration  5, inertia 1478.334
+Iteration  6, inertia 1440.426
+Iteration  7, inertia 1423.010
+Iteration  8, inertia 1422.617
+Iteration  9, inertia 1422.335
+Initialization complete
+Initialization complete
+Iteration  0, inertia 115.221
+Iteration  1, inertia 22.247
+Iteration  2, inertia 9.400
+Iteration  3, inertia 8.325
+Iteration  4, inertia 7.374
+Iteration  5, inertia 7.212
+Iteration  6, inertia 7.169
+Iteration  7, inertia 7.121
+Iteration  8, inertia 7.085
+Iteration  9, inertia 7.073
+Initialization complete
+Iteration  0, inertia 390614.812
+Iteration  1, inertia 27077.881
+Iteration  2, inertia 2082.536
+Iteration  3, inertia 1898.096
+Iteration  4, inertia 1830.882
+Iteration  5, inertia 1821.541
+Iteration  6, inertia 1817.008
+Iteration  7, inertia 1814.488
+Iteration  8, inertia 1810.836
+Iteration  9, inertia 1810.806
+Initialization complete
+Iteration  0, inertia 46312604.000
+Iteration  1, inertia 3349128.000
+Iteration  2, inertia 567215.688
+Iteration  3, inertia 472919.469
+Iteration  4, inertia 427506.000
+Iteration  5, inertia 389221.656
+Iteration  6, inertia 364853.469
+Iteration  7, inertia 351953.938
+Iteration  8, inertia 350678.750
+Iteration  9, inertia 350611.500
+Initialization complete
+Iteration  0, inertia 97112848.000
+Iteration  1, inertia 9391788.000
+Iteration  2, inertia 382346.250
+Iteration  3, inertia 297702.719
+Iteration  4, inertia 253111.359
+Iteration  5, inertia 242436.875
+Iteration  6, inertia 237391.906
+Iteration  7, inertia 234897.547
+Iteration  8, inertia 233976.812
+Iteration  9, inertia 233792.422
+Initialization complete
+Iteration  0, inertia 122624272.000
+Iteration  1, inertia 5549184.000
+Iteration  2, inertia 235074.031
+Iteration  3, inertia 163771.750
+Iteration  4, inertia 142824.875
+Iteration  5, inertia 138738.219
+Iteration  6, inertia 137623.047
+Iteration  7, inertia 137300.484
+Iteration  8, inertia 136997.703
+Iteration  9, inertia 136707.203
+Initialization complete
+Iteration  0, inertia 36805412.000
+Iteration  1, inertia 3227905.000
+Iteration  2, inertia 1438432.000
+Iteration  3, inertia 1390309.250
+Iteration  4, inertia 1380642.000
+Iteration  5, inertia 1380212.750
+Iteration  6, inertia 1379696.000
+Iteration  7, inertia 1379455.250
+Iteration  8, inertia 1379388.000
+Iteration  9, inertia 1379372.500
+Initialization complete
+Iteration  0, inertia 11000656.000
+Iteration  1, inertia 1056689.875
+Iteration  2, inertia 116235.734
+Iteration  3, inertia 90971.969
+Iteration  4, inertia 81163.117
+Iteration  5, inertia 78250.219
+Iteration  6, inertia 76034.984
+Iteration  7, inertia 74462.797
+Iteration  8, inertia 72780.211
+Iteration  9, inertia 72163.578
+Initialization complete
+Iteration  0, inertia 3640442.250
+Iteration  1, inertia 297438.219
+Iteration  2, inertia 40231.742
+Iteration  3, inertia 25211.557
+Iteration  4, inertia 23220.055
+Iteration  5, inertia 22736.219
+Iteration  6, inertia 22202.523
+Iteration  7, inertia 21885.426
+Iteration  8, inertia 22005.125
+Iteration  9, inertia 21898.107
+Initialization complete
+Iteration  0, inertia 20153.566
+Iteration  1, inertia 2578.766
+Iteration  2, inertia 910.460
+Iteration  3, inertia 753.780
+Iteration  4, inertia 742.635
+Iteration  5, inertia 736.742
+Iteration  6, inertia 734.165
+Iteration  7, inertia 733.632
+Iteration  8, inertia 733.088
+Iteration  9, inertia 732.909
+Initialization complete
+Iteration  0, inertia 4463.530
+Iteration  1, inertia 607.257
+Iteration  2, inertia 524.175
+Iteration  3, inertia 520.842
+Iteration  4, inertia 520.028
+Iteration  5, inertia 519.482
+Iteration  6, inertia 519.200
+Iteration  7, inertia 519.005
+Iteration  8, inertia 518.854
+Iteration  9, inertia 518.766
+Initialization complete
+Iteration  0, inertia 1256565.500
+Iteration  1, inertia 97639.742
+Iteration  2, inertia 8169.178
+Iteration  3, inertia 6200.666
+Iteration  4, inertia 5988.048
+Iteration  5, inertia 5898.417
+Iteration  6, inertia 5741.957
+Iteration  7, inertia 5499.749
+Iteration  8, inertia 5282.246
+Iteration  9, inertia 5153.018
+Initialization complete
+Iteration  0, inertia 215197.312
+Iteration  1, inertia 22917.164
+Iteration  2, inertia 7201.003
+Iteration  3, inertia 6986.808
+Iteration  4, inertia 6967.569
+Iteration  5, inertia 6962.832
+Iteration  6, inertia 6960.354
+Iteration  7, inertia 6958.922
+Iteration  8, inertia 6958.169
+Iteration  9, inertia 6958.213
+Initialization complete
+Iteration  0, inertia 1764052.500
+Iteration  1, inertia 132709.859
+Iteration  2, inertia 15547.693
+Iteration  3, inertia 9288.739
+Iteration  4, inertia 8260.463
+Iteration  5, inertia 7314.936
+Iteration  6, inertia 6599.185
+Iteration  7, inertia 6008.235
+Iteration  8, inertia 5360.918
+Iteration  9, inertia 5156.869
+Initialization complete
+Iteration  0, inertia 1228943.500
+Iteration  1, inertia 95658.562
+Iteration  2, inertia 12842.914
+Iteration  3, inertia 8360.872
+Iteration  4, inertia 7114.949
+Iteration  5, inertia 5702.556
+Iteration  6, inertia 4939.449
+Iteration  7, inertia 4890.062
+Iteration  8, inertia 4832.775
+Iteration  9, inertia 4778.688
+Initialization complete
+Iteration  0, inertia 14973.770
+Iteration  1, inertia 1826.468
+Iteration  2, inertia 1713.664
+Iteration  3, inertia 1691.202
+Iteration  4, inertia 1686.975
+Iteration  5, inertia 1685.282
+Iteration  6, inertia 1684.521
+Iteration  7, inertia 1684.274
+Iteration  8, inertia 1684.098
+Iteration  9, inertia 1683.937
+Initialization complete
+Iteration  0, inertia 335139.281
+Iteration  1, inertia 32398.604
+Iteration  2, inertia 9060.721
+Iteration  3, inertia 8647.118
+Iteration  4, inertia 8503.819
+Iteration  5, inertia 8481.891
+Iteration  6, inertia 8474.077
+Iteration  7, inertia 8470.592
+Iteration  8, inertia 8470.016
+Iteration  9, inertia 8468.891
+Initialization complete
+Iteration  0, inertia 91274.414
+Iteration  1, inertia 8850.434
+Iteration  2, inertia 3367.329
+Iteration  3, inertia 3269.882
+Iteration  4, inertia 3252.878
+Iteration  5, inertia 3243.217
+Iteration  6, inertia 3236.360
+Iteration  7, inertia 3232.608
+Iteration  8, inertia 3227.479
+Iteration  9, inertia 3227.051
+Initialization complete
+Iteration  0, inertia 1398112.250
+Iteration  1, inertia 56907.805
+Iteration  2, inertia 6195.525
+Iteration  3, inertia 4526.364
+Iteration  4, inertia 4365.010
+Iteration  5, inertia 4329.546
+Iteration  6, inertia 4319.637
+Iteration  7, inertia 4314.544
+Iteration  8, inertia 4310.677
+Iteration  9, inertia 4308.443
+Initialization complete
+Iteration  0, inertia 1551531.375
+Iteration  1, inertia 110066.938
+Iteration  2, inertia 7839.912
+Iteration  3, inertia 4008.052
+Iteration  4, inertia 3853.749
+Iteration  5, inertia 3682.582
+Iteration  6, inertia 3593.343
+Iteration  7, inertia 3558.098
+Iteration  8, inertia 3549.888
+Iteration  9, inertia 3549.009
+Initialization complete
+Iteration  0, inertia 1904768.125
+Iteration  1, inertia 141353.156
+Iteration  2, inertia 6340.733
+Iteration  3, inertia 3412.680
+Iteration  4, inertia 3049.515
+Iteration  5, inertia 2844.216
+Iteration  6, inertia 2781.497
+Iteration  7, inertia 2754.850
+Iteration  8, inertia 2753.374
+Iteration  9, inertia 2752.889
+Initialization complete
+Iteration  0, inertia 3070673.750
+Iteration  1, inertia 113471.156
+Iteration  2, inertia 10002.832
+Iteration  3, inertia 7751.804
+Iteration  4, inertia 6745.714
+Iteration  5, inertia 6322.032
+Iteration  6, inertia 6175.160
+Iteration  7, inertia 6105.508
+Iteration  8, inertia 6091.212
+Iteration  9, inertia 6076.427
+Initialization complete
+Iteration  0, inertia 85047.875
+Iteration  1, inertia 7374.254
+Iteration  2, inertia 3310.398
+Iteration  3, inertia 3218.129
+Iteration  4, inertia 3205.494
+Iteration  5, inertia 3199.869
+Iteration  6, inertia 3198.265
+Iteration  7, inertia 3197.436
+Iteration  8, inertia 3196.843
+Iteration  9, inertia 3196.350
+Initialization complete
+Iteration  0, inertia 130073.391
+Iteration  1, inertia 12815.244
+Iteration  2, inertia 4317.729
+Iteration  3, inertia 3583.687
+Iteration  4, inertia 3383.703
+Iteration  5, inertia 3337.529
+Iteration  6, inertia 3331.175
+Iteration  7, inertia 3328.726
+Iteration  8, inertia 3327.724
+Iteration  9, inertia 3327.506
+Initialization complete
+Iteration  0, inertia 1658596.625
+Iteration  1, inertia 102163.266
+Iteration  2, inertia 6246.012
+Iteration  3, inertia 2652.964
+Iteration  4, inertia 2311.519
+Iteration  5, inertia 2246.451
+Iteration  6, inertia 2143.423
+Iteration  7, inertia 2058.968
+Iteration  8, inertia 2022.482
+Iteration  9, inertia 2001.499
+Initialization complete
+Initialization complete
+Iteration  0, inertia 136.379
+Iteration  1, inertia 21.286
+Iteration  2, inertia 9.168
+Iteration  3, inertia 8.536
+Iteration  4, inertia 8.352
+Iteration  5, inertia 8.026
+Iteration  6, inertia 7.297
+Iteration  7, inertia 7.214
+Iteration  8, inertia 7.179
+Iteration  9, inertia 7.171
+Initialization complete
+Iteration  0, inertia 388333.438
+Iteration  1, inertia 25873.971
+Iteration  2, inertia 2810.490
+Iteration  3, inertia 2234.539
+Iteration  4, inertia 2193.502
+Iteration  5, inertia 2090.318
+Iteration  6, inertia 1875.632
+Iteration  7, inertia 1820.624
+Iteration  8, inertia 1813.212
+Iteration  9, inertia 1808.923
+Initialization complete
+Iteration  0, inertia 46395904.000
+Iteration  1, inertia 4334223.500
+Iteration  2, inertia 419921.812
+Iteration  3, inertia 320381.656
+Iteration  4, inertia 269279.500
+Iteration  5, inertia 247647.641
+Iteration  6, inertia 241920.047
+Iteration  7, inertia 241888.625
+Iteration  8, inertia 241882.969
+Iteration  9, inertia 241881.953
+Initialization complete
+Iteration  0, inertia 97223160.000
+Iteration  1, inertia 9394610.000
+Iteration  2, inertia 445940.438
+Iteration  3, inertia 283331.188
+Iteration  4, inertia 245325.797
+Iteration  5, inertia 232666.844
+Iteration  6, inertia 230998.297
+Iteration  7, inertia 230861.109
+Iteration  8, inertia 230674.094
+Iteration  9, inertia 230590.125
+Initialization complete
+Iteration  0, inertia 111236232.000
+Iteration  1, inertia 6367505.500
+Iteration  2, inertia 263289.188
+Iteration  3, inertia 176250.312
+Iteration  4, inertia 161566.453
+Iteration  5, inertia 149512.547
+Iteration  6, inertia 139891.844
+Iteration  7, inertia 136719.938
+Iteration  8, inertia 136639.688
+Iteration  9, inertia 136577.156
+Initialization complete
+Iteration  0, inertia 37998600.000
+Iteration  1, inertia 3477997.500
+Iteration  2, inertia 1409723.500
+Iteration  3, inertia 1353256.000
+Iteration  4, inertia 1344936.125
+Iteration  5, inertia 1342935.125
+Iteration  6, inertia 1340500.500
+Iteration  7, inertia 1340056.750
+Iteration  8, inertia 1339834.250
+Iteration  9, inertia 1339742.500
+Initialization complete
+Iteration  0, inertia 11044577.000
+Iteration  1, inertia 1064371.500
+Iteration  2, inertia 111620.664
+Iteration  3, inertia 84759.469
+Iteration  4, inertia 78825.625
+Iteration  5, inertia 76213.828
+Iteration  6, inertia 75338.680
+Iteration  7, inertia 75283.898
+Iteration  8, inertia 75269.812
+Iteration  9, inertia 75267.945
+Initialization complete
+Iteration  0, inertia 3424800.500
+Iteration  1, inertia 271363.875
+Iteration  2, inertia 41561.836
+Iteration  3, inertia 27137.365
+Iteration  4, inertia 24828.982
+Iteration  5, inertia 23489.359
+Iteration  6, inertia 22729.744
+Iteration  7, inertia 22085.348
+Iteration  8, inertia 21794.857
+Iteration  9, inertia 21713.426
+Initialization complete
+Iteration  0, inertia 21136.080
+Iteration  1, inertia 2695.394
+Iteration  2, inertia 843.379
+Iteration  3, inertia 776.823
+Iteration  4, inertia 772.662
+Iteration  5, inertia 770.356
+Iteration  6, inertia 769.410
+Iteration  7, inertia 768.947
+Iteration  8, inertia 768.685
+Iteration  9, inertia 768.467
+Initialization complete
+Iteration  0, inertia 3970.730
+Iteration  1, inertia 577.384
+Iteration  2, inertia 439.371
+Iteration  3, inertia 407.504
+Iteration  4, inertia 406.603
+Iteration  5, inertia 406.147
+Iteration  6, inertia 405.878
+Iteration  7, inertia 405.731
+Iteration  8, inertia 405.556
+Iteration  9, inertia 405.467
+Initialization complete
+Iteration  0, inertia 1237254.500
+Iteration  1, inertia 88843.289
+Iteration  2, inertia 8221.856
+Iteration  3, inertia 5932.641
+Iteration  4, inertia 5545.379
+Iteration  5, inertia 5331.083
+Iteration  6, inertia 5114.518
+Iteration  7, inertia 5007.665
+Iteration  8, inertia 4967.040
+Iteration  9, inertia 4935.698
+Initialization complete
+Iteration  0, inertia 214635.250
+Iteration  1, inertia 22919.527
+Iteration  2, inertia 7573.907
+Iteration  3, inertia 7257.618
+Iteration  4, inertia 7064.928
+Iteration  5, inertia 7037.902
+Iteration  6, inertia 7035.013
+Iteration  7, inertia 7033.650
+Iteration  8, inertia 7032.687
+Iteration  9, inertia 7031.945
+Initialization complete
+Iteration  0, inertia 1689473.000
+Iteration  1, inertia 128135.570
+Iteration  2, inertia 16030.719
+Iteration  3, inertia 6138.370
+Iteration  4, inertia 5545.537
+Iteration  5, inertia 5342.495
+Iteration  6, inertia 5125.650
+Iteration  7, inertia 4877.022
+Iteration  8, inertia 4476.805
+Iteration  9, inertia 4190.219
+Initialization complete
+Iteration  0, inertia 1235811.125
+Iteration  1, inertia 98060.258
+Iteration  2, inertia 13240.178
+Iteration  3, inertia 8683.868
+Iteration  4, inertia 7243.539
+Iteration  5, inertia 5831.180
+Iteration  6, inertia 5086.719
+Iteration  7, inertia 5032.395
+Iteration  8, inertia 4982.027
+Iteration  9, inertia 4912.458
+Initialization complete
+Iteration  0, inertia 15005.634
+Iteration  1, inertia 1835.536
+Iteration  2, inertia 1714.297
+Iteration  3, inertia 1693.154
+Iteration  4, inertia 1688.205
+Iteration  5, inertia 1685.093
+Iteration  6, inertia 1683.794
+Iteration  7, inertia 1683.084
+Iteration  8, inertia 1682.745
+Iteration  9, inertia 1682.598
+Initialization complete
+Iteration  0, inertia 338713.750
+Iteration  1, inertia 32787.430
+Iteration  2, inertia 8826.678
+Iteration  3, inertia 8674.644
+Iteration  4, inertia 8492.559
+Iteration  5, inertia 8485.090
+Iteration  6, inertia 8482.083
+Iteration  7, inertia 8481.163
+Iteration  8, inertia 8480.781
+Iteration  9, inertia 8480.601
+Initialization complete
+Iteration  0, inertia 90637.547
+Iteration  1, inertia 8857.791
+Iteration  2, inertia 3292.602
+Iteration  3, inertia 3236.673
+Iteration  4, inertia 3227.212
+Iteration  5, inertia 3223.528
+Iteration  6, inertia 3221.873
+Iteration  7, inertia 3221.300
+Iteration  8, inertia 3220.887
+Iteration  9, inertia 3220.683
+Initialization complete
+Iteration  0, inertia 1449293.125
+Iteration  1, inertia 61653.883
+Iteration  2, inertia 6517.220
+Iteration  3, inertia 5080.125
+Iteration  4, inertia 4538.230
+Iteration  5, inertia 4304.736
+Iteration  6, inertia 4220.368
+Iteration  7, inertia 4065.090
+Iteration  8, inertia 3961.089
+Iteration  9, inertia 3944.608
+Initialization complete
+Iteration  0, inertia 1509266.375
+Iteration  1, inertia 85953.352
+Iteration  2, inertia 17446.307
+Iteration  3, inertia 10166.654
+Iteration  4, inertia 6458.970
+Iteration  5, inertia 5266.728
+Iteration  6, inertia 4771.849
+Iteration  7, inertia 4406.510
+Iteration  8, inertia 4026.210
+Iteration  9, inertia 3877.117
+Initialization complete
+Iteration  0, inertia 1962910.375
+Iteration  1, inertia 159446.938
+Iteration  2, inertia 7169.856
+Iteration  3, inertia 3170.196
+Iteration  4, inertia 2852.862
+Iteration  5, inertia 2819.443
+Iteration  6, inertia 2806.731
+Iteration  7, inertia 2797.724
+Iteration  8, inertia 2793.509
+Iteration  9, inertia 2792.571
+Initialization complete
+Iteration  0, inertia 3200639.000
+Iteration  1, inertia 100016.453
+Iteration  2, inertia 10353.857
+Iteration  3, inertia 8482.772
+Iteration  4, inertia 7819.309
+Iteration  5, inertia 7201.386
+Iteration  6, inertia 6920.978
+Iteration  7, inertia 6372.005
+Iteration  8, inertia 6211.545
+Iteration  9, inertia 6130.316
+Initialization complete
+Iteration  0, inertia 83341.844
+Iteration  1, inertia 7584.374
+Iteration  2, inertia 3372.628
+Iteration  3, inertia 3224.979
+Iteration  4, inertia 3201.127
+Iteration  5, inertia 3193.426
+Iteration  6, inertia 3188.912
+Iteration  7, inertia 3186.938
+Iteration  8, inertia 3185.161
+Iteration  9, inertia 3182.982
+Initialization complete
+Iteration  0, inertia 130843.680
+Iteration  1, inertia 12623.273
+Iteration  2, inertia 4438.040
+Iteration  3, inertia 3465.089
+Iteration  4, inertia 3371.594
+Iteration  5, inertia 3339.228
+Iteration  6, inertia 3334.840
+Iteration  7, inertia 3332.044
+Iteration  8, inertia 3331.614
+Iteration  9, inertia 3331.337
+Initialization complete
+Iteration  0, inertia 1647945.625
+Iteration  1, inertia 84814.109
+Iteration  2, inertia 10944.885
+Iteration  3, inertia 4384.553
+Iteration  4, inertia 2932.603
+Iteration  5, inertia 2618.417
+Iteration  6, inertia 2516.738
+Iteration  7, inertia 2493.017
+Iteration  8, inertia 2486.064
+Iteration  9, inertia 2464.247
+Initialization complete
+Initialization complete
+Iteration  0, inertia 115.997
+Iteration  1, inertia 21.403
+Iteration  2, inertia 8.887
+Iteration  3, inertia 7.757
+Iteration  4, inertia 7.419
+Iteration  5, inertia 7.289
+Iteration  6, inertia 7.219
+Iteration  7, inertia 7.181
+Iteration  8, inertia 7.165
+Iteration  9, inertia 7.150
+Initialization complete
+Iteration  0, inertia 392129.062
+Iteration  1, inertia 25988.512
+Iteration  2, inertia 2308.854
+Iteration  3, inertia 1773.306
+Iteration  4, inertia 1766.075
+Iteration  5, inertia 1759.463
+Iteration  6, inertia 1756.845
+Iteration  7, inertia 1756.519
+Iteration  8, inertia 1756.360
+Iteration  9, inertia 1756.328
+Initialization complete
+Iteration  0, inertia 46370912.000
+Iteration  1, inertia 4333425.000
+Iteration  2, inertia 405958.406
+Iteration  3, inertia 304642.906
+Iteration  4, inertia 282338.531
+Iteration  5, inertia 280186.875
+Iteration  6, inertia 279852.562
+Iteration  7, inertia 279849.625
+Iteration  8, inertia 279849.312
+Iteration  9, inertia 279849.188
+Initialization complete
+Iteration  0, inertia 96671360.000
+Iteration  1, inertia 9235704.000
+Iteration  2, inertia 422370.312
+Iteration  3, inertia 263719.594
+Iteration  4, inertia 238513.562
+Iteration  5, inertia 237037.688
+Iteration  6, inertia 237001.141
+Iteration  7, inertia 236987.016
+Iteration  8, inertia 236977.312
+Iteration  9, inertia 236974.109
+Initialization complete
+Iteration  0, inertia 113177648.000
+Iteration  1, inertia 6384011.000
+Iteration  2, inertia 241945.719
+Iteration  3, inertia 143437.906
+Iteration  4, inertia 134922.109
+Iteration  5, inertia 132080.453
+Iteration  6, inertia 130849.734
+Iteration  7, inertia 130538.719
+Iteration  8, inertia 129963.422
+Iteration  9, inertia 129865.289
+Initialization complete
+Iteration  0, inertia 37092352.000
+Iteration  1, inertia 3504637.500
+Iteration  2, inertia 1420042.750
+Iteration  3, inertia 1362907.250
+Iteration  4, inertia 1350766.875
+Iteration  5, inertia 1343317.500
+Iteration  6, inertia 1341925.250
+Iteration  7, inertia 1341887.250
+Iteration  8, inertia 1341871.500
+Iteration  9, inertia 1341858.875
+Initialization complete
+Iteration  0, inertia 10863005.000
+Iteration  1, inertia 826274.750
+Iteration  2, inertia 133770.234
+Iteration  3, inertia 104155.555
+Iteration  4, inertia 94382.773
+Iteration  5, inertia 89042.094
+Iteration  6, inertia 83130.164
+Iteration  7, inertia 79761.711
+Iteration  8, inertia 79610.625
+Iteration  9, inertia 79569.438
+Initialization complete
+Iteration  0, inertia 3583974.000
+Iteration  1, inertia 287444.469
+Iteration  2, inertia 41025.703
+Iteration  3, inertia 27114.742
+Iteration  4, inertia 23293.344
+Iteration  5, inertia 22390.469
+Iteration  6, inertia 22024.863
+Iteration  7, inertia 21837.170
+Iteration  8, inertia 21796.518
+Iteration  9, inertia 21781.438
+Initialization complete
+Iteration  0, inertia 17926.605
+Iteration  1, inertia 2653.753
+Iteration  2, inertia 902.227
+Iteration  3, inertia 752.269
+Iteration  4, inertia 741.996
+Iteration  5, inertia 736.595
+Iteration  6, inertia 732.639
+Iteration  7, inertia 730.540
+Iteration  8, inertia 730.536
+Iteration  9, inertia 730.207
+Initialization complete
+Iteration  0, inertia 4483.340
+Iteration  1, inertia 587.362
+Iteration  2, inertia 441.691
+Iteration  3, inertia 406.958
+Iteration  4, inertia 405.667
+Iteration  5, inertia 405.261
+Iteration  6, inertia 404.973
+Iteration  7, inertia 404.818
+Iteration  8, inertia 404.736
+Iteration  9, inertia 404.691
+Initialization complete
+Iteration  0, inertia 1260913.750
+Iteration  1, inertia 96762.953
+Iteration  2, inertia 7878.275
+Iteration  3, inertia 6235.589
+Iteration  4, inertia 6043.252
+Iteration  5, inertia 5924.440
+Iteration  6, inertia 5751.796
+Iteration  7, inertia 5397.667
+Iteration  8, inertia 5190.802
+Iteration  9, inertia 5083.505
+Initialization complete
+Iteration  0, inertia 217866.281
+Iteration  1, inertia 23081.479
+Iteration  2, inertia 7457.520
+Iteration  3, inertia 7075.625
+Iteration  4, inertia 6985.845
+Iteration  5, inertia 6998.942
+Iteration  6, inertia 6966.164
+Iteration  7, inertia 6961.756
+Iteration  8, inertia 6960.782
+Iteration  9, inertia 6960.288
+Initialization complete
+Iteration  0, inertia 1769063.125
+Iteration  1, inertia 128718.109
+Iteration  2, inertia 16254.350
+Iteration  3, inertia 10555.523
+Iteration  4, inertia 8427.996
+Iteration  5, inertia 7404.441
+Iteration  6, inertia 6621.142
+Iteration  7, inertia 6098.003
+Iteration  8, inertia 5409.145
+Iteration  9, inertia 5207.260
+Initialization complete
+Iteration  0, inertia 1228567.625
+Iteration  1, inertia 96416.102
+Iteration  2, inertia 14253.190
+Iteration  3, inertia 8732.820
+Iteration  4, inertia 7498.275
+Iteration  5, inertia 6238.296
+Iteration  6, inertia 5147.610
+Iteration  7, inertia 5051.299
+Iteration  8, inertia 4975.209
+Iteration  9, inertia 4844.351
+Initialization complete
+Iteration  0, inertia 14924.791
+Iteration  1, inertia 1830.648
+Iteration  2, inertia 1717.226
+Iteration  3, inertia 1692.525
+Iteration  4, inertia 1688.284
+Iteration  5, inertia 1685.729
+Iteration  6, inertia 1684.450
+Iteration  7, inertia 1683.774
+Iteration  8, inertia 1683.523
+Iteration  9, inertia 1683.397
+Initialization complete
+Iteration  0, inertia 336873.812
+Iteration  1, inertia 32688.158
+Iteration  2, inertia 8890.892
+Iteration  3, inertia 8556.826
+Iteration  4, inertia 8523.254
+Iteration  5, inertia 8507.863
+Iteration  6, inertia 8498.800
+Iteration  7, inertia 8494.689
+Iteration  8, inertia 8493.748
+Iteration  9, inertia 8493.159
+Initialization complete
+Iteration  0, inertia 92647.414
+Iteration  1, inertia 9096.985
+Iteration  2, inertia 3363.462
+Iteration  3, inertia 3242.290
+Iteration  4, inertia 3232.797
+Iteration  5, inertia 3228.359
+Iteration  6, inertia 3227.407
+Iteration  7, inertia 3226.036
+Iteration  8, inertia 3225.110
+Iteration  9, inertia 3224.411
+Initialization complete
+Iteration  0, inertia 1432574.875
+Iteration  1, inertia 58743.070
+Iteration  2, inertia 6367.461
+Iteration  3, inertia 4889.590
+Iteration  4, inertia 4122.084
+Iteration  5, inertia 4005.647
+Iteration  6, inertia 3958.370
+Iteration  7, inertia 3939.296
+Iteration  8, inertia 3936.170
+Iteration  9, inertia 3934.052
+Initialization complete
+Iteration  0, inertia 1499195.875
+Iteration  1, inertia 113210.703
+Iteration  2, inertia 6131.875
+Iteration  3, inertia 4095.858
+Iteration  4, inertia 3598.935
+Iteration  5, inertia 3369.050
+Iteration  6, inertia 3244.636
+Iteration  7, inertia 3180.234
+Iteration  8, inertia 3113.048
+Iteration  9, inertia 3105.040
+Initialization complete
+Iteration  0, inertia 1963691.625
+Iteration  1, inertia 154267.891
+Iteration  2, inertia 10116.493
+Iteration  3, inertia 3237.468
+Iteration  4, inertia 2870.316
+Iteration  5, inertia 2774.849
+Iteration  6, inertia 2721.850
+Iteration  7, inertia 2694.091
+Iteration  8, inertia 2681.436
+Iteration  9, inertia 2677.813
+Initialization complete
+Iteration  0, inertia 3074616.500
+Iteration  1, inertia 119530.602
+Iteration  2, inertia 11593.014
+Iteration  3, inertia 7634.064
+Iteration  4, inertia 6556.019
+Iteration  5, inertia 6203.724
+Iteration  6, inertia 5957.452
+Iteration  7, inertia 5733.367
+Iteration  8, inertia 5620.019
+Iteration  9, inertia 5495.444
+Initialization complete
+Iteration  0, inertia 84025.727
+Iteration  1, inertia 7536.716
+Iteration  2, inertia 3335.714
+Iteration  3, inertia 3212.792
+Iteration  4, inertia 3198.624
+Iteration  5, inertia 3194.782
+Iteration  6, inertia 3193.663
+Iteration  7, inertia 3193.044
+Iteration  8, inertia 3192.577
+Iteration  9, inertia 3192.381
+Initialization complete
+Iteration  0, inertia 135567.078
+Iteration  1, inertia 12887.897
+Iteration  2, inertia 4141.858
+Iteration  3, inertia 3459.860
+Iteration  4, inertia 3370.130
+Iteration  5, inertia 3352.368
+Iteration  6, inertia 3339.731
+Iteration  7, inertia 3332.861
+Iteration  8, inertia 3332.077
+Iteration  9, inertia 3331.875
+Initialization complete
+Iteration  0, inertia 1621656.125
+Iteration  1, inertia 98711.000
+Iteration  2, inertia 7122.488
+Iteration  3, inertia 3659.477
+Iteration  4, inertia 3174.606
+Iteration  5, inertia 2643.767
+Iteration  6, inertia 2379.299
+Iteration  7, inertia 2346.012
+Iteration  8, inertia 2314.189
+Iteration  9, inertia 2308.028
+Initialization complete
+Initialization complete
+Iteration  0, inertia 112.130
+Iteration  1, inertia 19.499
+Iteration  2, inertia 8.645
+Iteration  3, inertia 7.473
+Iteration  4, inertia 7.160
+Iteration  5, inertia 7.075
+Iteration  6, inertia 7.044
+Iteration  7, inertia 7.027
+Iteration  8, inertia 7.012
+Iteration  9, inertia 6.995
+Initialization complete
+Iteration  0, inertia 381168.094
+Iteration  1, inertia 26472.756
+Iteration  2, inertia 1894.362
+Iteration  3, inertia 1764.709
+Iteration  4, inertia 1741.916
+Iteration  5, inertia 1734.854
+Iteration  6, inertia 1731.821
+Iteration  7, inertia 1731.003
+Iteration  8, inertia 1730.959
+Iteration  9, inertia 1730.928
+Initialization complete
+Iteration  0, inertia 47542656.000
+Iteration  1, inertia 4352405.500
+Iteration  2, inertia 442413.500
+Iteration  3, inertia 361571.062
+Iteration  4, inertia 328596.188
+Iteration  5, inertia 288048.156
+Iteration  6, inertia 262627.406
+Iteration  7, inertia 256204.969
+Iteration  8, inertia 250069.000
+Iteration  9, inertia 244278.906
+Initialization complete
+Iteration  0, inertia 96610336.000
+Iteration  1, inertia 9256486.000
+Iteration  2, inertia 415131.938
+Iteration  3, inertia 295145.375
+Iteration  4, inertia 264388.469
+Iteration  5, inertia 236940.047
+Iteration  6, inertia 228362.953
+Iteration  7, inertia 228343.859
+Iteration  8, inertia 228332.391
+Iteration  9, inertia 228329.438
+Initialization complete
+Iteration  0, inertia 119482328.000
+Iteration  1, inertia 6145883.500
+Iteration  2, inertia 245475.859
+Iteration  3, inertia 175498.656
+Iteration  4, inertia 153546.953
+Iteration  5, inertia 141989.219
+Iteration  6, inertia 140903.812
+Iteration  7, inertia 140423.250
+Iteration  8, inertia 140305.703
+Iteration  9, inertia 140252.703
+Initialization complete
+Iteration  0, inertia 37593616.000
+Iteration  1, inertia 3397819.250
+Iteration  2, inertia 1433416.250
+Iteration  3, inertia 1364819.000
+Iteration  4, inertia 1353095.500
+Iteration  5, inertia 1351306.375
+Iteration  6, inertia 1350856.750
+Iteration  7, inertia 1350483.625
+Iteration  8, inertia 1350216.750
+Iteration  9, inertia 1350133.500
+Initialization complete
+Iteration  0, inertia 10681809.000
+Iteration  1, inertia 972498.750
+Iteration  2, inertia 105445.438
+Iteration  3, inertia 81932.547
+Iteration  4, inertia 76299.422
+Iteration  5, inertia 73951.133
+Iteration  6, inertia 73256.219
+Iteration  7, inertia 72526.664
+Iteration  8, inertia 72064.555
+Iteration  9, inertia 71849.055
+Initialization complete
+Iteration  0, inertia 3657804.750
+Iteration  1, inertia 331686.688
+Iteration  2, inertia 34512.184
+Iteration  3, inertia 25300.730
+Iteration  4, inertia 23486.801
+Iteration  5, inertia 21912.223
+Iteration  6, inertia 21485.666
+Iteration  7, inertia 21370.422
+Iteration  8, inertia 21307.076
+Iteration  9, inertia 21269.467
+Initialization complete
+Iteration  0, inertia 19298.791
+Iteration  1, inertia 2567.241
+Iteration  2, inertia 847.231
+Iteration  3, inertia 817.032
+Iteration  4, inertia 794.301
+Iteration  5, inertia 788.048
+Iteration  6, inertia 783.876
+Iteration  7, inertia 782.384
+Iteration  8, inertia 781.269
+Iteration  9, inertia 780.833
+Initialization complete
+Iteration  0, inertia 4462.275
+Iteration  1, inertia 594.579
+Iteration  2, inertia 525.069
+Iteration  3, inertia 519.755
+Iteration  4, inertia 518.847
+Iteration  5, inertia 518.262
+Iteration  6, inertia 517.763
+Iteration  7, inertia 517.517
+Iteration  8, inertia 517.397
+Iteration  9, inertia 517.348
+Initialization complete
+Iteration  0, inertia 1262073.375
+Iteration  1, inertia 92963.555
+Iteration  2, inertia 11269.039
+Iteration  3, inertia 6450.656
+Iteration  4, inertia 5972.934
+Iteration  5, inertia 5860.007
+Iteration  6, inertia 5829.286
+Iteration  7, inertia 5779.549
+Iteration  8, inertia 5558.721
+Iteration  9, inertia 5327.401
+Initialization complete
+Iteration  0, inertia 162139.656
+Iteration  1, inertia 17924.375
+Iteration  2, inertia 7528.249
+Iteration  3, inertia 7111.659
+Iteration  4, inertia 6979.544
+Iteration  5, inertia 6972.153
+Iteration  6, inertia 6968.893
+Iteration  7, inertia 6966.522
+Iteration  8, inertia 6965.091
+Iteration  9, inertia 6964.269
+Initialization complete
+Iteration  0, inertia 1767264.000
+Iteration  1, inertia 124846.547
+Iteration  2, inertia 14869.051
+Iteration  3, inertia 8869.411
+Iteration  4, inertia 7817.239
+Iteration  5, inertia 7001.043
+Iteration  6, inertia 6431.231
+Iteration  7, inertia 6053.405
+Iteration  8, inertia 5383.910
+Iteration  9, inertia 5177.877
+Initialization complete
+Iteration  0, inertia 1236352.625
+Iteration  1, inertia 96204.945
+Iteration  2, inertia 12764.940
+Iteration  3, inertia 8168.714
+Iteration  4, inertia 6975.483
+Iteration  5, inertia 5597.731
+Iteration  6, inertia 4893.005
+Iteration  7, inertia 4840.131
+Iteration  8, inertia 4770.204
+Iteration  9, inertia 4703.155
+Initialization complete
+Iteration  0, inertia 14985.057
+Iteration  1, inertia 1831.498
+Iteration  2, inertia 1714.128
+Iteration  3, inertia 1692.243
+Iteration  4, inertia 1688.881
+Iteration  5, inertia 1687.417
+Iteration  6, inertia 1686.601
+Iteration  7, inertia 1686.082
+Iteration  8, inertia 1685.632
+Iteration  9, inertia 1685.537
+Initialization complete
+Iteration  0, inertia 338713.938
+Iteration  1, inertia 32698.895
+Iteration  2, inertia 8745.059
+Iteration  3, inertia 8561.726
+Iteration  4, inertia 8496.161
+Iteration  5, inertia 8475.912
+Iteration  6, inertia 8470.712
+Iteration  7, inertia 8468.889
+Iteration  8, inertia 8467.866
+Iteration  9, inertia 8467.451
+Initialization complete
+Iteration  0, inertia 92648.023
+Iteration  1, inertia 9109.092
+Iteration  2, inertia 3587.523
+Iteration  3, inertia 3494.256
+Iteration  4, inertia 3372.942
+Iteration  5, inertia 3286.012
+Iteration  6, inertia 3244.444
+Iteration  7, inertia 3227.947
+Iteration  8, inertia 3225.720
+Iteration  9, inertia 3225.489
+Initialization complete
+Iteration  0, inertia 1346300.500
+Iteration  1, inertia 62481.633
+Iteration  2, inertia 6188.920
+Iteration  3, inertia 4787.466
+Iteration  4, inertia 4192.707
+Iteration  5, inertia 3972.043
+Iteration  6, inertia 3915.935
+Iteration  7, inertia 3894.256
+Iteration  8, inertia 3888.880
+Iteration  9, inertia 3885.523
+Initialization complete
+Iteration  0, inertia 1533678.375
+Iteration  1, inertia 112576.750
+Iteration  2, inertia 18831.859
+Iteration  3, inertia 4594.169
+Iteration  4, inertia 3657.227
+Iteration  5, inertia 3547.315
+Iteration  6, inertia 3491.696
+Iteration  7, inertia 3452.359
+Iteration  8, inertia 3432.775
+Iteration  9, inertia 3427.519
+Initialization complete
+Iteration  0, inertia 1931220.250
+Iteration  1, inertia 151396.750
+Iteration  2, inertia 8866.968
+Iteration  3, inertia 3223.739
+Iteration  4, inertia 2964.589
+Iteration  5, inertia 2882.975
+Iteration  6, inertia 2863.061
+Iteration  7, inertia 2859.617
+Iteration  8, inertia 2857.907
+Iteration  9, inertia 2856.687
+Initialization complete
+Iteration  0, inertia 2930907.250
+Iteration  1, inertia 92226.008
+Iteration  2, inertia 9556.298
+Iteration  3, inertia 7125.453
+Iteration  4, inertia 6400.249
+Iteration  5, inertia 6058.846
+Iteration  6, inertia 5815.931
+Iteration  7, inertia 5634.379
+Iteration  8, inertia 5508.824
+Iteration  9, inertia 5469.857
+Initialization complete
+Iteration  0, inertia 83006.469
+Iteration  1, inertia 7611.959
+Iteration  2, inertia 3318.339
+Iteration  3, inertia 3222.922
+Iteration  4, inertia 3206.026
+Iteration  5, inertia 3199.372
+Iteration  6, inertia 3195.966
+Iteration  7, inertia 3194.959
+Iteration  8, inertia 3193.757
+Iteration  9, inertia 3191.783
+Initialization complete
+Iteration  0, inertia 124900.062
+Iteration  1, inertia 11800.517
+Iteration  2, inertia 3754.071
+Iteration  3, inertia 3411.009
+Iteration  4, inertia 3355.682
+Iteration  5, inertia 3336.438
+Iteration  6, inertia 3324.739
+Iteration  7, inertia 3322.181
+Iteration  8, inertia 3321.345
+Iteration  9, inertia 3320.982
+Initialization complete
+Iteration  0, inertia 1639603.000
+Iteration  1, inertia 108223.617
+Iteration  2, inertia 7308.290
+Iteration  3, inertia 2549.325
+Iteration  4, inertia 2351.897
+Iteration  5, inertia 2142.472
+Iteration  6, inertia 2007.182
+Iteration  7, inertia 1941.931
+Iteration  8, inertia 1898.538
+Iteration  9, inertia 1878.630
+Initialization complete
+Initialization complete
+Iteration  0, inertia 117.945
+Iteration  1, inertia 21.146
+Iteration  2, inertia 9.187
+Iteration  3, inertia 7.659
+Iteration  4, inertia 7.344
+Iteration  5, inertia 7.208
+Iteration  6, inertia 7.142
+Iteration  7, inertia 7.124
+Iteration  8, inertia 7.116
+Iteration  9, inertia 7.111
+Initialization complete
+Iteration  0, inertia 393261.375
+Iteration  1, inertia 26574.965
+Iteration  2, inertia 2260.003
+Iteration  3, inertia 1773.918
+Iteration  4, inertia 1763.710
+Iteration  5, inertia 1757.681
+Iteration  6, inertia 1752.535
+Iteration  7, inertia 1748.669
+Iteration  8, inertia 1747.003
+Iteration  9, inertia 1745.686
+Initialization complete
+Iteration  0, inertia 47577736.000
+Iteration  1, inertia 4355840.000
+Iteration  2, inertia 393939.188
+Iteration  3, inertia 317702.938
+Iteration  4, inertia 296266.188
+Iteration  5, inertia 292063.906
+Iteration  6, inertia 285199.594
+Iteration  7, inertia 275874.031
+Iteration  8, inertia 266482.156
+Iteration  9, inertia 260542.875
+Initialization complete
+Iteration  0, inertia 97161976.000
+Iteration  1, inertia 9364722.000
+Iteration  2, inertia 467026.219
+Iteration  3, inertia 265697.125
+Iteration  4, inertia 234854.766
+Iteration  5, inertia 225587.266
+Iteration  6, inertia 224030.828
+Iteration  7, inertia 223860.375
+Iteration  8, inertia 223858.375
+Iteration  9, inertia 223856.188
+Initialization complete
+Iteration  0, inertia 113462184.000
+Iteration  1, inertia 5809990.500
+Iteration  2, inertia 210369.812
+Iteration  3, inertia 153163.141
+Iteration  4, inertia 145571.672
+Iteration  5, inertia 140250.656
+Iteration  6, inertia 136357.969
+Iteration  7, inertia 135127.750
+Iteration  8, inertia 134558.312
+Iteration  9, inertia 134411.656
+Initialization complete
+Iteration  0, inertia 38139440.000
+Iteration  1, inertia 3497166.750
+Iteration  2, inertia 1406473.500
+Iteration  3, inertia 1364693.750
+Iteration  4, inertia 1358609.750
+Iteration  5, inertia 1357602.250
+Iteration  6, inertia 1357267.625
+Iteration  7, inertia 1357069.000
+Iteration  8, inertia 1356916.750
+Iteration  9, inertia 1356723.000
+Initialization complete
+Iteration  0, inertia 11323745.000
+Iteration  1, inertia 984919.312
+Iteration  2, inertia 133864.250
+Iteration  3, inertia 98336.500
+Iteration  4, inertia 90841.859
+Iteration  5, inertia 87756.852
+Iteration  6, inertia 84171.344
+Iteration  7, inertia 81944.547
+Iteration  8, inertia 78707.938
+Iteration  9, inertia 78037.906
+Initialization complete
+Iteration  0, inertia 3655012.500
+Iteration  1, inertia 323981.844
+Iteration  2, inertia 32183.906
+Iteration  3, inertia 23915.754
+Iteration  4, inertia 22230.963
+Iteration  5, inertia 21556.203
+Iteration  6, inertia 21150.742
+Iteration  7, inertia 20916.787
+Iteration  8, inertia 20803.002
+Iteration  9, inertia 20788.707
+Initialization complete
+Iteration  0, inertia 19821.133
+Iteration  1, inertia 2619.743
+Iteration  2, inertia 1017.127
+Iteration  3, inertia 779.631
+Iteration  4, inertia 746.783
+Iteration  5, inertia 740.731
+Iteration  6, inertia 738.993
+Iteration  7, inertia 738.604
+Iteration  8, inertia 738.199
+Iteration  9, inertia 737.836
+Initialization complete
+Iteration  0, inertia 4472.069
+Iteration  1, inertia 606.930
+Iteration  2, inertia 523.092
+Iteration  3, inertia 520.184
+Iteration  4, inertia 519.502
+Iteration  5, inertia 519.195
+Iteration  6, inertia 518.995
+Iteration  7, inertia 518.854
+Iteration  8, inertia 518.732
+Iteration  9, inertia 518.647
+Initialization complete
+Iteration  0, inertia 1240409.000
+Iteration  1, inertia 97623.031
+Iteration  2, inertia 8324.273
+Iteration  3, inertia 5235.030
+Iteration  4, inertia 4908.059
+Iteration  5, inertia 4861.175
+Iteration  6, inertia 4815.861
+Iteration  7, inertia 4789.396
+Iteration  8, inertia 4787.923
+Iteration  9, inertia 4785.929
+Initialization complete
+Iteration  0, inertia 214873.594
+Iteration  1, inertia 22864.062
+Iteration  2, inertia 7503.065
+Iteration  3, inertia 7004.986
+Iteration  4, inertia 6974.284
+Iteration  5, inertia 6963.085
+Iteration  6, inertia 6960.945
+Iteration  7, inertia 6959.521
+Iteration  8, inertia 6958.453
+Iteration  9, inertia 6957.728
+Initialization complete
+Iteration  0, inertia 1755400.000
+Iteration  1, inertia 141794.656
+Iteration  2, inertia 15497.223
+Iteration  3, inertia 5924.325
+Iteration  4, inertia 5342.434
+Iteration  5, inertia 5151.516
+Iteration  6, inertia 5054.628
+Iteration  7, inertia 4868.117
+Iteration  8, inertia 4556.524
+Iteration  9, inertia 4097.885
+Initialization complete
+Iteration  0, inertia 1249010.250
+Iteration  1, inertia 99958.008
+Iteration  2, inertia 12948.428
+Iteration  3, inertia 8303.604
+Iteration  4, inertia 7026.892
+Iteration  5, inertia 5643.900
+Iteration  6, inertia 4927.025
+Iteration  7, inertia 4888.564
+Iteration  8, inertia 4830.053
+Iteration  9, inertia 4785.108
+Initialization complete
+Iteration  0, inertia 14863.373
+Iteration  1, inertia 1752.268
+Iteration  2, inertia 1704.089
+Iteration  3, inertia 1690.266
+Iteration  4, inertia 1684.440
+Iteration  5, inertia 1681.721
+Iteration  6, inertia 1680.228
+Iteration  7, inertia 1678.875
+Iteration  8, inertia 1678.072
+Iteration  9, inertia 1677.542
+Initialization complete
+Iteration  0, inertia 336414.812
+Iteration  1, inertia 32499.518
+Iteration  2, inertia 8691.496
+Iteration  3, inertia 8565.476
+Iteration  4, inertia 8514.500
+Iteration  5, inertia 8483.826
+Iteration  6, inertia 8469.781
+Iteration  7, inertia 8464.762
+Iteration  8, inertia 8463.102
+Iteration  9, inertia 8462.642
+Initialization complete
+Iteration  0, inertia 90057.109
+Iteration  1, inertia 8698.612
+Iteration  2, inertia 3564.720
+Iteration  3, inertia 3379.772
+Iteration  4, inertia 3289.185
+Iteration  5, inertia 3228.500
+Iteration  6, inertia 3224.215
+Iteration  7, inertia 3223.911
+Iteration  8, inertia 3223.743
+Iteration  9, inertia 3223.614
+Initialization complete
+Iteration  0, inertia 1317394.125
+Iteration  1, inertia 59408.469
+Iteration  2, inertia 5893.302
+Iteration  3, inertia 4966.218
+Iteration  4, inertia 4512.926
+Iteration  5, inertia 4278.401
+Iteration  6, inertia 4148.577
+Iteration  7, inertia 4055.106
+Iteration  8, inertia 3776.781
+Iteration  9, inertia 3761.919
+Initialization complete
+Iteration  0, inertia 1522591.625
+Iteration  1, inertia 112158.406
+Iteration  2, inertia 6163.458
+Iteration  3, inertia 4205.272
+Iteration  4, inertia 3721.497
+Iteration  5, inertia 3510.764
+Iteration  6, inertia 3392.234
+Iteration  7, inertia 3336.413
+Iteration  8, inertia 3306.571
+Iteration  9, inertia 3293.791
+Initialization complete
+Iteration  0, inertia 1910562.125
+Iteration  1, inertia 97333.406
+Iteration  2, inertia 6387.094
+Iteration  3, inertia 4343.107
+Iteration  4, inertia 4021.752
+Iteration  5, inertia 3837.449
+Iteration  6, inertia 3683.440
+Iteration  7, inertia 3615.504
+Iteration  8, inertia 3533.351
+Iteration  9, inertia 3491.058
+Initialization complete
+Iteration  0, inertia 3106960.750
+Iteration  1, inertia 84924.523
+Iteration  2, inertia 10436.187
+Iteration  3, inertia 7623.632
+Iteration  4, inertia 6804.211
+Iteration  5, inertia 6583.621
+Iteration  6, inertia 6513.728
+Iteration  7, inertia 6468.297
+Iteration  8, inertia 6396.039
+Iteration  9, inertia 6266.047
+Initialization complete
+Iteration  0, inertia 84749.375
+Iteration  1, inertia 7558.359
+Iteration  2, inertia 3384.512
+Iteration  3, inertia 3236.775
+Iteration  4, inertia 3217.755
+Iteration  5, inertia 3213.151
+Iteration  6, inertia 3206.567
+Iteration  7, inertia 3202.863
+Iteration  8, inertia 3199.527
+Iteration  9, inertia 3195.148
+Initialization complete
+Iteration  0, inertia 133901.781
+Iteration  1, inertia 12765.063
+Iteration  2, inertia 4281.015
+Iteration  3, inertia 3492.164
+Iteration  4, inertia 3391.153
+Iteration  5, inertia 3368.161
+Iteration  6, inertia 3353.311
+Iteration  7, inertia 3343.766
+Iteration  8, inertia 3340.967
+Iteration  9, inertia 3340.675
+Initialization complete
+Iteration  0, inertia 1613518.000
+Iteration  1, inertia 84052.445
+Iteration  2, inertia 8378.895
+Iteration  3, inertia 3224.302
+Iteration  4, inertia 2912.048
+Iteration  5, inertia 2666.515
+Iteration  6, inertia 2578.129
+Iteration  7, inertia 2486.556
+Iteration  8, inertia 2434.888
+Iteration  9, inertia 2426.303
+Initialization complete
+search 1923 queries, time cost =0.04630780220031738
+Doc_code balance {'Avg': 0.4282047096245589, 'Max': 0.5, 'Min': 0.013657239545564415, 'Flat': 0.5}
+Doc_code conflict {'Max': 3436, 'Min': 1, 'Type': 64, '%': 0.0064}
+Kmeans balance {'Avg': 0.8305224447389424, 'Max': 1.0, 'Min': 0.5057142857142858, 'Flat': 0.5086999999999999}
+Kmeans conflict {'Max': 186, 'Min': 1, 'Type': 649, '%': 0.0649}
+####################
+DR evaluation out_split/model-3-fit/225.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021140575408935547
+search 1923 queries, time cost =0.04657864570617676
+Doc_code balance {'Avg': 0.427681974889985, 'Max': 0.5, 'Min': 0.011481750060430285, 'Flat': 0.5}
+Doc_code conflict {'Max': 4162, 'Min': 1, 'Type': 55, '%': 0.0055}
+Kmeans balance {'Avg': 0.8034513216625297, 'Max': 1.0, 'Min': 0.5, 'Flat': 0.50985}
+Kmeans conflict {'Max': 141, 'Min': 1, 'Type': 699, '%': 0.0699}
+####################
+DR evaluation out_split/model-3-fit/234.pt
+## Model # new keys in file: [] # no match keys: []
+(10000, 768)
+build index of 10000 instances, time cost =0.021558046340942383
+search 1923 queries, time cost =0.04596900939941406
+Doc_code balance {'Avg': 0.42819438187192965, 'Max': 0.5, 'Min': 0.011723471114334028, 'Flat': 0.5}
+Doc_code conflict {'Max': 2620, 'Min': 1, 'Type': 74, '%': 0.0074}
+Kmeans balance {'Avg': 0.8268341716718206, 'Max': 1.0, 'Min': 0.5025, 'Flat': 0.5104}
+Kmeans conflict {'Max': 134, 'Min': 1, 'Type': 703, '%': 0.0703}
+Test out_split/model-3-fit/0.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 0.00017334026694401108, 'MRR@100': 0.0005961209452649219, 'nDCG@10': 0.00026001040041601667}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 0.00017334026694401108, 'MRR@100': 0.0005961209452649219, 'nDCG@10': 0.00026001040041601667}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 0.00017334026694401108, 'MRR@100': 0.0005961209452649219, 'nDCG@10': 0.00026001040041601667}
+Test out_split/model-3-fit/9.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0010400416016640667, 'R@10': 0.0010400416016640667, 'R@100': 0.016640665626625067, 'MRR@10': 0.0010400416016640667, 'MRR@100': 0.0013974902114436702, 'nDCG@10': 0.0010400416016640667}
+{'R@1': 0.0010400416016640667, 'R@10': 0.0010400416016640667, 'R@100': 0.016640665626625067, 'MRR@10': 0.0010400416016640667, 'MRR@100': 0.0013974902114436702, 'nDCG@10': 0.0010400416016640667}
+{'R@1': 0.0010400416016640667, 'R@10': 0.0010400416016640667, 'R@100': 0.016640665626625067, 'MRR@10': 0.0010400416016640667, 'MRR@100': 0.0013974902114436702, 'nDCG@10': 0.0010400416016640667}
+Test out_split/model-3-fit/18.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0005200208008320333, 'R@10': 0.0078003120124804995, 'R@100': 0.02236089443577743, 'MRR@10': 0.0018019133463751255, 'MRR@100': 0.00212655828042516, 'nDCG@10': 0.0031632063151771444}
+{'R@1': 0.0005200208008320333, 'R@10': 0.0078003120124804995, 'R@100': 0.02236089443577743, 'MRR@10': 0.0018019133463751255, 'MRR@100': 0.00212655828042516, 'nDCG@10': 0.0031632063151771444}
+{'R@1': 0.0005200208008320333, 'R@10': 0.0078003120124804995, 'R@100': 0.02236089443577743, 'MRR@10': 0.0018019133463751255, 'MRR@100': 0.00212655828042516, 'nDCG@10': 0.0031632063151771444}
+Test out_split/model-3-fit/27.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0015600624024961, 'R@100': 0.01612064482579303, 'MRR@10': 0.00033512451609175474, 'MRR@100': 0.0009588327765893826, 'nDCG@10': 0.0006177237664578902}
+{'R@1': 0.0, 'R@10': 0.0015600624024961, 'R@100': 0.01612064482579303, 'MRR@10': 0.00033512451609175474, 'MRR@100': 0.0009588327765893826, 'nDCG@10': 0.0006177237664578902}
+{'R@1': 0.0, 'R@10': 0.0015600624024961, 'R@100': 0.01612064482579303, 'MRR@10': 0.00033512451609175474, 'MRR@100': 0.0009588327765893826, 'nDCG@10': 0.0006177237664578902}
+Test out_split/model-3-fit/36.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.011440457618304731, 'MRR@10': 0.00023978736927254867, 'MRR@100': 0.0005486225210910242, 'nDCG@10': 0.0006349581776148344}
+{'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.011440457618304731, 'MRR@10': 0.00023978736927254867, 'MRR@100': 0.0005486225210910242, 'nDCG@10': 0.0006349581776148344}
+{'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.011440457618304731, 'MRR@10': 0.00023978736927254867, 'MRR@100': 0.0005486225210910242, 'nDCG@10': 0.0006349581776148344}
+Test out_split/model-3-fit/45.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.003640145605824233, 'R@100': 0.0202808112324493, 'MRR@10': 0.000525798809730167, 'MRR@100': 0.0010171175357009611, 'nDCG@10': 0.0012057422865742688}
+{'R@1': 0.0, 'R@10': 0.003640145605824233, 'R@100': 0.0202808112324493, 'MRR@10': 0.000525798809730167, 'MRR@100': 0.0010171175357009611, 'nDCG@10': 0.0012057422865742688}
+{'R@1': 0.0, 'R@10': 0.003640145605824233, 'R@100': 0.0202808112324493, 'MRR@10': 0.000525798809730167, 'MRR@100': 0.0010171175357009611, 'nDCG@10': 0.0012057422865742688}
+Test out_split/model-3-fit/54.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.015080603224128965, 'MRR@10': 0.00017334026694401108, 'MRR@100': 0.0005175009514620086, 'nDCG@10': 0.00026001040041601667}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.015080603224128965, 'MRR@10': 0.00017334026694401108, 'MRR@100': 0.0005175009514620086, 'nDCG@10': 0.00026001040041601667}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.015080603224128965, 'MRR@10': 0.00017334026694401108, 'MRR@100': 0.0005175009514620086, 'nDCG@10': 0.00026001040041601667}
+Test out_split/model-3-fit/63.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.011960478419136765, 'MRR@10': 0.00042757265846189404, 'MRR@100': 0.0006630247456253822, 'nDCG@10': 0.0007915000370344815}
+{'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.011960478419136765, 'MRR@10': 0.00042757265846189404, 'MRR@100': 0.0006630247456253822, 'nDCG@10': 0.0007915000370344815}
+{'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.011960478419136765, 'MRR@10': 0.00042757265846189404, 'MRR@100': 0.0006630247456253822, 'nDCG@10': 0.0007915000370344815}
+Test out_split/model-3-fit/72.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0005200208008320333, 'R@10': 0.004160166406656267, 'R@100': 0.016640665626625067, 'MRR@10': 0.0009331484370485932, 'MRR@100': 0.0012742728341349108, 'nDCG@10': 0.0016246045567058088}
+{'R@1': 0.0005200208008320333, 'R@10': 0.004160166406656267, 'R@100': 0.016640665626625067, 'MRR@10': 0.0009331484370485932, 'MRR@100': 0.0012742728341349108, 'nDCG@10': 0.0016246045567058088}
+{'R@1': 0.0005200208008320333, 'R@10': 0.004160166406656267, 'R@100': 0.016640665626625067, 'MRR@10': 0.0009331484370485932, 'MRR@100': 0.0012742728341349108, 'nDCG@10': 0.0016246045567058088}
+Test out_split/model-3-fit/81.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.011960478419136765, 'MRR@10': 0.00010400416016640666, 'MRR@100': 0.0003546454514009015, 'nDCG@10': 0.00020117150662222653}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.011960478419136765, 'MRR@10': 0.00010400416016640666, 'MRR@100': 0.0003546454514009015, 'nDCG@10': 0.00020117150662222653}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.011960478419136765, 'MRR@10': 0.00010400416016640666, 'MRR@100': 0.0003546454514009015, 'nDCG@10': 0.00020117150662222653}
+Test out_split/model-3-fit/90.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.0020800832033281333, 'MRR@10': 6.500260010400417e-05, 'MRR@100': 0.00014548200975658072, 'nDCG@10': 0.00016404829786049338}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.0020800832033281333, 'MRR@10': 6.500260010400417e-05, 'MRR@100': 0.00014548200975658072, 'nDCG@10': 0.00016404829786049338}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.0020800832033281333, 'MRR@10': 6.500260010400417e-05, 'MRR@100': 0.00014548200975658072, 'nDCG@10': 0.00016404829786049338}
+Test out_split/model-3-fit/99.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.011960478419136765, 'MRR@10': 7.42886858331476e-05, 'MRR@100': 0.0003020337747605165, 'nDCG@10': 0.00017334026694401108}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.011960478419136765, 'MRR@10': 7.42886858331476e-05, 'MRR@100': 0.0003020337747605165, 'nDCG@10': 0.00017334026694401108}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.011960478419136765, 'MRR@10': 7.42886858331476e-05, 'MRR@100': 0.0003020337747605165, 'nDCG@10': 0.00017334026694401108}
+Test out_split/model-3-fit/108.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0, 'R@100': 0.011960478419136765, 'MRR@10': 0.0, 'MRR@100': 0.00023642190278620897, 'nDCG@10': 0.0}
+{'R@1': 0.0, 'R@10': 0.0, 'R@100': 0.011960478419136765, 'MRR@10': 0.0, 'MRR@100': 0.00023642190278620897, 'nDCG@10': 0.0}
+{'R@1': 0.0, 'R@10': 0.0, 'R@100': 0.011960478419136765, 'MRR@10': 0.0, 'MRR@100': 0.00023642190278620897, 'nDCG@10': 0.0}
+Test out_split/model-3-fit/117.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0010400416016640667, 'R@10': 0.0015600624024961, 'R@100': 0.010400416016640665, 'MRR@10': 0.0011050442017680707, 'MRR@100': 0.0012772982306689066, 'nDCG@10': 0.00120408989952456}
+{'R@1': 0.0010400416016640667, 'R@10': 0.0015600624024961, 'R@100': 0.010400416016640665, 'MRR@10': 0.0011050442017680707, 'MRR@100': 0.0012772982306689066, 'nDCG@10': 0.00120408989952456}
+{'R@1': 0.0010400416016640667, 'R@10': 0.0015600624024961, 'R@100': 0.010400416016640665, 'MRR@10': 0.0011050442017680707, 'MRR@100': 0.0012772982306689066, 'nDCG@10': 0.00120408989952456}
+Test out_split/model-3-fit/126.pt
+## Model # new keys in file: [] # no match keys: []
+Iteration  0, inertia 424033.031
+Iteration  1, inertia 23284.594
+Iteration  2, inertia 4824.106
+Iteration  3, inertia 3881.769
+Iteration  4, inertia 3579.576
+Iteration  5, inertia 3277.247
+Iteration  6, inertia 1756.989
+Iteration  7, inertia 1552.967
+Iteration  8, inertia 1508.420
+Iteration  9, inertia 1508.111
+Initialization complete
+Iteration  0, inertia 84890.641
+Iteration  1, inertia 7732.106
+Iteration  2, inertia 3361.837
+Iteration  3, inertia 2043.357
+Iteration  4, inertia 2015.497
+Iteration  5, inertia 2011.747
+Iteration  6, inertia 2010.162
+Iteration  7, inertia 2009.618
+Iteration  8, inertia 2009.338
+Iteration  9, inertia 2009.100
+Initialization complete
+Iteration  0, inertia 1053791.000
+Iteration  1, inertia 96739.008
+Iteration  2, inertia 3829.202
+Iteration  3, inertia 2407.908
+Iteration  4, inertia 2167.268
+Iteration  5, inertia 2060.220
+Iteration  6, inertia 2009.547
+Iteration  7, inertia 1998.886
+Iteration  8, inertia 1987.833
+Iteration  9, inertia 1978.822
+Iteration  0, inertia 449689.031
+Iteration  1, inertia 23141.705
+Iteration  2, inertia 4920.139
+Iteration  3, inertia 3892.702
+Iteration  4, inertia 3590.507
+Iteration  5, inertia 3277.732
+Iteration  6, inertia 1790.676
+Iteration  7, inertia 1584.096
+Iteration  8, inertia 1536.810
+Iteration  9, inertia 1535.858
+Initialization complete
+Iteration  0, inertia 83768.938
+Iteration  1, inertia 7514.883
+Iteration  2, inertia 3387.449
+Iteration  3, inertia 2060.570
+Iteration  4, inertia 2027.323
+Iteration  5, inertia 2022.657
+Iteration  6, inertia 2019.561
+Iteration  7, inertia 2018.950
+Iteration  8, inertia 2018.619
+Iteration  9, inertia 2018.443
+Initialization complete
+Iteration  0, inertia 1118041.750
+Iteration  1, inertia 103659.820
+Iteration  2, inertia 3024.416
+Iteration  3, inertia 2142.486
+Iteration  4, inertia 2087.627
+Iteration  5, inertia 2012.396
+Iteration  6, inertia 1967.867
+Iteration  7, inertia 1958.255
+Iteration  8, inertia 1950.038
+Iteration  9, inertia 1934.090
+Iteration  0, inertia 432502.406
+Iteration  1, inertia 23844.625
+Iteration  2, inertia 4949.418
+Iteration  3, inertia 3915.626
+Iteration  4, inertia 3549.732
+Iteration  5, inertia 3222.903
+Iteration  6, inertia 1741.438
+Iteration  7, inertia 1544.876
+Iteration  8, inertia 1498.473
+Iteration  9, inertia 1494.971
+Initialization complete
+Iteration  0, inertia 84569.680
+Iteration  1, inertia 7642.825
+Iteration  2, inertia 3366.861
+Iteration  3, inertia 2049.882
+Iteration  4, inertia 2026.256
+Iteration  5, inertia 2020.973
+Iteration  6, inertia 2019.694
+Iteration  7, inertia 2019.259
+Iteration  8, inertia 2019.042
+Iteration  9, inertia 2018.907
+Initialization complete
+Iteration  0, inertia 1065412.625
+Iteration  1, inertia 93792.602
+Iteration  2, inertia 2586.377
+Iteration  3, inertia 2127.197
+Iteration  4, inertia 2091.973
+Iteration  5, inertia 2060.785
+Iteration  6, inertia 2022.059
+Iteration  7, inertia 1979.599
+Iteration  8, inertia 1939.002
+Iteration  9, inertia 1905.864
+Iteration  0, inertia 433375.250
+Iteration  1, inertia 23718.385
+Iteration  2, inertia 4954.001
+Iteration  3, inertia 3873.399
+Iteration  4, inertia 3558.593
+Iteration  5, inertia 3239.353
+Iteration  6, inertia 1755.642
+Iteration  7, inertia 1558.359
+Iteration  8, inertia 1513.446
+Iteration  9, inertia 1512.820
+Initialization complete
+Iteration  0, inertia 81638.641
+Iteration  1, inertia 7165.701
+Iteration  2, inertia 3351.805
+Iteration  3, inertia 2051.371
+Iteration  4, inertia 2026.401
+Iteration  5, inertia 2023.180
+Iteration  6, inertia 2021.780
+Iteration  7, inertia 2021.300
+Iteration  8, inertia 2021.075
+Iteration  9, inertia 2020.851
+Initialization complete
+Iteration  0, inertia 1067303.125
+Iteration  1, inertia 88745.375
+Iteration  2, inertia 4880.934
+Iteration  3, inertia 2831.094
+Iteration  4, inertia 2126.293
+Iteration  5, inertia 2037.237
+Iteration  6, inertia 2009.874
+Iteration  7, inertia 1996.678
+Iteration  8, inertia 1982.501
+Iteration  9, inertia 1967.374
+Iteration  0, inertia 435289.562
+Iteration  1, inertia 23629.754
+Iteration  2, inertia 4835.584
+Iteration  3, inertia 3876.413
+Iteration  4, inertia 3580.619
+Iteration  5, inertia 3256.918
+Iteration  6, inertia 1757.123
+Iteration  7, inertia 1555.953
+Iteration  8, inertia 1502.958
+Iteration  9, inertia 1498.873
+Initialization complete
+Iteration  0, inertia 82922.047
+Iteration  1, inertia 7467.930
+Iteration  2, inertia 3397.056
+Iteration  3, inertia 2056.528
+Iteration  4, inertia 2018.468
+Iteration  5, inertia 2012.105
+Iteration  6, inertia 2010.865
+Iteration  7, inertia 2010.217
+Iteration  8, inertia 2009.833
+Iteration  9, inertia 2009.611
+Initialization complete
+Iteration  0, inertia 1107364.375
+Iteration  1, inertia 106917.195
+Iteration  2, inertia 3241.164
+Iteration  3, inertia 2241.346
+Iteration  4, inertia 2089.820
+Iteration  5, inertia 2062.995
+Iteration  6, inertia 2049.526
+Iteration  7, inertia 2040.397
+Iteration  8, inertia 2028.760
+Iteration  9, inertia 2007.404
+Iteration  0, inertia 431119.562
+Iteration  1, inertia 23599.424
+Iteration  2, inertia 5029.486
+Iteration  3, inertia 3874.098
+Iteration  4, inertia 3557.075
+Iteration  5, inertia 3234.381
+Iteration  6, inertia 1739.792
+Iteration  7, inertia 1542.925
+Iteration  8, inertia 1495.542
+Iteration  9, inertia 1495.039
+Initialization complete
+Iteration  0, inertia 84211.547
+Iteration  1, inertia 7400.277
+Iteration  2, inertia 3385.013
+Iteration  3, inertia 2077.291
+Iteration  4, inertia 2048.315
+Iteration  5, inertia 2036.163
+Iteration  6, inertia 2033.563
+Iteration  7, inertia 2032.629
+Iteration  8, inertia 2032.385
+Iteration  9, inertia 2032.266
+Initialization complete
+Iteration  0, inertia 1072540.750
+Iteration  1, inertia 91671.742
+Iteration  2, inertia 2953.662
+Iteration  3, inertia 2434.491
+Iteration  4, inertia 2306.205
+Iteration  5, inertia 2121.891
+Iteration  6, inertia 2055.466
+Iteration  7, inertia 2045.410
+Iteration  8, inertia 2034.712
+Iteration  9, inertia 2027.024
+Iteration  0, inertia 443600.688
+Iteration  1, inertia 23527.170
+Iteration  2, inertia 4787.158
+Iteration  3, inertia 3868.297
+Iteration  4, inertia 3569.114
+Iteration  5, inertia 3236.667
+Iteration  6, inertia 1738.108
+Iteration  7, inertia 1541.811
+Iteration  8, inertia 1493.156
+Iteration  9, inertia 1492.885
+Initialization complete
+Iteration  0, inertia 83627.148
+Iteration  1, inertia 7475.874
+Iteration  2, inertia 3351.327
+Iteration  3, inertia 2035.128
+Iteration  4, inertia 2012.754
+Iteration  5, inertia 2008.107
+Iteration  6, inertia 2007.162
+Iteration  7, inertia 2005.720
+Iteration  8, inertia 2005.158
+Iteration  9, inertia 2005.055
+Initialization complete
+Iteration  0, inertia 1080847.375
+Iteration  1, inertia 87876.375
+Iteration  2, inertia 5312.886
+Iteration  3, inertia 2883.701
+Iteration  4, inertia 2283.725
+Iteration  5, inertia 2071.112
+Iteration  6, inertia 2038.221
+Iteration  7, inertia 2021.302
+Iteration  8, inertia 2010.580
+Iteration  9, inertia 1991.131
+Iteration  0, inertia 434135.125
+Iteration  1, inertia 23396.281
+Iteration  2, inertia 4776.929
+Iteration  3, inertia 3874.728
+Iteration  4, inertia 3582.666
+Iteration  5, inertia 3260.267
+Iteration  6, inertia 1765.598
+Iteration  7, inertia 1568.624
+Iteration  8, inertia 1524.032
+Iteration  9, inertia 1523.793
+Initialization complete
+Iteration  0, inertia 85369.172
+Iteration  1, inertia 7537.604
+Iteration  2, inertia 3386.436
+Iteration  3, inertia 2074.689
+Iteration  4, inertia 2047.600
+Iteration  5, inertia 2036.403
+Iteration  6, inertia 2027.391
+Iteration  7, inertia 2023.794
+Iteration  8, inertia 2023.521
+Iteration  9, inertia 2023.331
+Initialization complete
+Iteration  0, inertia 1060270.000
+Iteration  1, inertia 96700.125
+Iteration  2, inertia 3149.070
+Iteration  3, inertia 2222.721
+Iteration  4, inertia 2052.465
+Iteration  5, inertia 1999.270
+Iteration  6, inertia 1987.116
+Iteration  7, inertia 1973.869
+Iteration  8, inertia 1965.641
+Iteration  9, inertia 1931.697
+Iteration  0, inertia 441420.906
+Iteration  1, inertia 23432.164
+Iteration  2, inertia 5025.058
+Iteration  3, inertia 3897.616
+Iteration  4, inertia 3578.365
+Iteration  5, inertia 3260.543
+Iteration  6, inertia 1775.523
+Iteration  7, inertia 1577.130
+Iteration  8, inertia 1531.737
+Iteration  9, inertia 1531.310
+Initialization complete
+Iteration  0, inertia 85206.359
+Iteration  1, inertia 7610.083
+Iteration  2, inertia 3360.942
+Iteration  3, inertia 2036.943
+Iteration  4, inertia 2012.478
+Iteration  5, inertia 2008.649
+Iteration  6, inertia 2006.969
+Iteration  7, inertia 2006.168
+Iteration  8, inertia 2005.481
+Iteration  9, inertia 2005.299
+Initialization complete
+Iteration  0, inertia 1070643.750
+Iteration  1, inertia 97181.602
+Iteration  2, inertia 2858.426
+Iteration  3, inertia 2232.646
+Iteration  4, inertia 2058.916
+Iteration  5, inertia 2008.156
+Iteration  6, inertia 1981.793
+Iteration  7, inertia 1948.266
+Iteration  8, inertia 1931.252
+Iteration  9, inertia 1924.986
+Iteration  0, inertia 440464.156
+Iteration  1, inertia 23593.617
+Iteration  2, inertia 5349.110
+Iteration  3, inertia 3851.690
+Iteration  4, inertia 3685.755
+Iteration  5, inertia 2632.341
+Iteration  6, inertia 1765.566
+Iteration  7, inertia 1586.671
+Iteration  8, inertia 1540.527
+Iteration  9, inertia 1539.933
+Initialization complete
+Iteration  0, inertia 82614.516
+Iteration  1, inertia 7449.300
+Iteration  2, inertia 3382.889
+Iteration  3, inertia 2056.229
+Iteration  4, inertia 2029.624
+Iteration  5, inertia 2022.866
+Iteration  6, inertia 2019.194
+Iteration  7, inertia 2018.238
+Iteration  8, inertia 2017.584
+Iteration  9, inertia 2017.331
+Initialization complete
+Iteration  0, inertia 1063113.250
+Iteration  1, inertia 91556.672
+Iteration  2, inertia 3863.452
+Iteration  3, inertia 2595.863
+Iteration  4, inertia 2238.814
+Iteration  5, inertia 2052.262
+Iteration  6, inertia 1954.331
+Iteration  7, inertia 1902.775
+Iteration  8, inertia 1860.907
+Iteration  9, inertia 1850.440
+Test {'R@1': 0.0, 'R@10': 0.0, 'R@100': 0.0109204368174727, 'MRR@10': 0.0, 'MRR@100': 0.00020708579756786226, 'nDCG@10': 0.0}
+{'R@1': 0.0, 'R@10': 0.0, 'R@100': 0.0109204368174727, 'MRR@10': 0.0, 'MRR@100': 0.00020708579756786226, 'nDCG@10': 0.0}
+{'R@1': 0.0, 'R@10': 0.0, 'R@100': 0.0109204368174727, 'MRR@10': 0.0, 'MRR@100': 0.00020708579756786226, 'nDCG@10': 0.0}
+Test out_split/model-3-fit/135.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.008320332813312533, 'MRR@10': 0.000767649753609192, 'MRR@100': 0.0008883319846977781, 'nDCG@10': 0.0010895438588020014}
+{'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.008320332813312533, 'MRR@10': 0.000767649753609192, 'MRR@100': 0.0008883319846977781, 'nDCG@10': 0.0010895438588020014}
+{'R@1': 0.0, 'R@10': 0.0020800832033281333, 'R@100': 0.008320332813312533, 'MRR@10': 0.000767649753609192, 'MRR@100': 0.0008883319846977781, 'nDCG@10': 0.0010895438588020014}
+Test out_split/model-3-fit/144.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0046801872074883, 'R@100': 0.0124804992199688, 'MRR@10': 0.0012003813485872768, 'MRR@100': 0.001355937448568882, 'nDCG@10': 0.0020102378209277127}
+{'R@1': 0.0, 'R@10': 0.0046801872074883, 'R@100': 0.0124804992199688, 'MRR@10': 0.0012003813485872768, 'MRR@100': 0.001355937448568882, 'nDCG@10': 0.0020102378209277127}
+{'R@1': 0.0, 'R@10': 0.0046801872074883, 'R@100': 0.0124804992199688, 'MRR@10': 0.0012003813485872768, 'MRR@100': 0.001355937448568882, 'nDCG@10': 0.0020102378209277127}
+Test out_split/model-3-fit/153.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.004160166406656267, 'R@100': 0.008840353614144566, 'MRR@10': 0.0008283188470395958, 'MRR@100': 0.0009343800320510335, 'nDCG@10': 0.0015881189212861215}
+{'R@1': 0.0, 'R@10': 0.004160166406656267, 'R@100': 0.008840353614144566, 'MRR@10': 0.0008283188470395958, 'MRR@100': 0.0009343800320510335, 'nDCG@10': 0.0015881189212861215}
+{'R@1': 0.0, 'R@10': 0.004160166406656267, 'R@100': 0.008840353614144566, 'MRR@10': 0.0008283188470395958, 'MRR@100': 0.0009343800320510335, 'nDCG@10': 0.0015881189212861215}
+Test out_split/model-3-fit/162.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0015600624024961, 'R@100': 0.0062402496099844, 'MRR@10': 0.0002692964861451601, 'MRR@100': 0.0003680738613529968, 'nDCG@10': 0.0005613493334334141}
+{'R@1': 0.0, 'R@10': 0.0015600624024961, 'R@100': 0.0062402496099844, 'MRR@10': 0.0002692964861451601, 'MRR@100': 0.0003680738613529968, 'nDCG@10': 0.0005613493334334141}
+{'R@1': 0.0, 'R@10': 0.0015600624024961, 'R@100': 0.0062402496099844, 'MRR@10': 0.0002692964861451601, 'MRR@100': 0.0003680738613529968, 'nDCG@10': 0.0005613493334334141}
+Test out_split/model-3-fit/171.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0046801872074883, 'R@100': 0.008840353614144566, 'MRR@10': 0.0011302198119670817, 'MRR@100': 0.001192310149507334, 'nDCG@10': 0.0019409563666048988}
+{'R@1': 0.0, 'R@10': 0.0046801872074883, 'R@100': 0.008840353614144566, 'MRR@10': 0.0011302198119670817, 'MRR@100': 0.001192310149507334, 'nDCG@10': 0.0019409563666048988}
+{'R@1': 0.0, 'R@10': 0.0046801872074883, 'R@100': 0.008840353614144566, 'MRR@10': 0.0011302198119670817, 'MRR@100': 0.001192310149507334, 'nDCG@10': 0.0019409563666048988}
+Test out_split/model-3-fit/180.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.014560582423296931, 'MRR@10': 0.00026001040041601667, 'MRR@100': 0.0006324808884534605, 'nDCG@10': 0.00032809659572098675}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.014560582423296931, 'MRR@10': 0.00026001040041601667, 'MRR@100': 0.0006324808884534605, 'nDCG@10': 0.00032809659572098675}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.014560582423296931, 'MRR@10': 0.00026001040041601667, 'MRR@100': 0.0006324808884534605, 'nDCG@10': 0.00032809659572098675}
+Test out_split/model-3-fit/189.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 5.778008898133703e-05, 'MRR@100': 0.0005444989860727232, 'nDCG@10': 0.000156541859419647}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 5.778008898133703e-05, 'MRR@100': 0.0005444989860727232, 'nDCG@10': 0.000156541859419647}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 5.778008898133703e-05, 'MRR@100': 0.0005444989860727232, 'nDCG@10': 0.000156541859419647}
+Test out_split/model-3-fit/198.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 6.500260010400417e-05, 'MRR@100': 0.000583398637789865, 'nDCG@10': 0.00016404829786049338}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 6.500260010400417e-05, 'MRR@100': 0.000583398637789865, 'nDCG@10': 0.00016404829786049338}
+{'R@1': 0.0, 'R@10': 0.0005200208008320333, 'R@100': 0.016640665626625067, 'MRR@10': 6.500260010400417e-05, 'MRR@100': 0.000583398637789865, 'nDCG@10': 0.00016404829786049338}
+Test out_split/model-3-fit/207.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0031201248049922, 'R@100': 0.0124804992199688, 'MRR@10': 0.000543751908806511, 'MRR@100': 0.0008888626283626327, 'nDCG@10': 0.0011244111180442474}
+{'R@1': 0.0, 'R@10': 0.0031201248049922, 'R@100': 0.0124804992199688, 'MRR@10': 0.000543751908806511, 'MRR@100': 0.0008888626283626327, 'nDCG@10': 0.0011244111180442474}
+{'R@1': 0.0, 'R@10': 0.0031201248049922, 'R@100': 0.0124804992199688, 'MRR@10': 0.000543751908806511, 'MRR@100': 0.0008888626283626327, 'nDCG@10': 0.0011244111180442474}
+Test out_split/model-3-fit/216.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0005200208008320333, 'R@10': 0.0020800832033281333, 'R@100': 0.010400416016640665, 'MRR@10': 0.0013000520020800832, 'MRR@100': 0.0014800720052889136, 'nDCG@10': 0.0015043105879949934}
+{'R@1': 0.0005200208008320333, 'R@10': 0.0020800832033281333, 'R@100': 0.010400416016640665, 'MRR@10': 0.0013000520020800832, 'MRR@100': 0.0014800720052889136, 'nDCG@10': 0.0015043105879949934}
+{'R@1': 0.0005200208008320333, 'R@10': 0.0020800832033281333, 'R@100': 0.010400416016640665, 'MRR@10': 0.0013000520020800832, 'MRR@100': 0.0014800720052889136, 'nDCG@10': 0.0015043105879949934}
+Test out_split/model-3-fit/225.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0031201248049922, 'R@100': 0.010400416016640665, 'MRR@10': 0.000767649753609192, 'MRR@100': 0.000888503186244714, 'nDCG@10': 0.0013171527031871333}
+{'R@1': 0.0, 'R@10': 0.0031201248049922, 'R@100': 0.010400416016640665, 'MRR@10': 0.000767649753609192, 'MRR@100': 0.000888503186244714, 'nDCG@10': 0.0013171527031871333}
+{'R@1': 0.0, 'R@10': 0.0031201248049922, 'R@100': 0.010400416016640665, 'MRR@10': 0.000767649753609192, 'MRR@100': 0.000888503186244714, 'nDCG@10': 0.0013171527031871333}
+Test out_split/model-3-fit/234.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0005200208008320333, 'R@10': 0.0005200208008320333, 'R@100': 0.008320332813312533, 'MRR@10': 0.0005200208008320333, 'MRR@100': 0.0006610300846005337, 'nDCG@10': 0.0005200208008320333}
+{'R@1': 0.0005200208008320333, 'R@10': 0.0005200208008320333, 'R@100': 0.008320332813312533, 'MRR@10': 0.0005200208008320333, 'MRR@100': 0.0006610300846005337, 'nDCG@10': 0.0005200208008320333}
+{'R@1': 0.0005200208008320333, 'R@10': 0.0005200208008320333, 'R@100': 0.008320332813312533, 'MRR@10': 0.0005200208008320333, 'MRR@100': 0.0006610300846005337, 'nDCG@10': 0.0005200208008320333}
+out_split/model-3-fit/225.pt
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "nq320k_split/train.json",
+  "dev_data": "nq320k_split/train.json",
+  "corpus_data": "nq320k_split/corpus_lite.json",
+  "save_path": "out_split/model"
+}
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "nq320k_split/train.json",
+  "dev_data": "nq320k_split/train.json",
+  "corpus_data": "nq320k_split/corpus_lite.json",
+  "save_path": "out_split/model"
+}
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "nq320k_split/train.json",
+  "dev_data": "nq320k_split/train.json",
+  "corpus_data": "nq320k_split/corpus_lite.json",
+  "save_path": "out_split/model"
+}
+Test out_split/model-3-fit/0.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 2.3257436565341767e-05, 'R@10': 0.0007558666883736075, 'R@100': 0.013919575784357048, 'MRR@10': 0.00020215511528858974, 'MRR@100': 0.0006170883175004135, 'nDCG@10': 0.0003314019333015557}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0007558666883736075, 'R@100': 0.013919575784357048, 'MRR@10': 0.00020215511528858974, 'MRR@100': 0.0006170883175004135, 'nDCG@10': 0.0003314019333015557}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0007558666883736075, 'R@100': 0.013919575784357048, 'MRR@10': 0.00020215511528858974, 'MRR@100': 0.0006170883175004135, 'nDCG@10': 0.0003314019333015557}
+Test out_split/model-3-fit/9.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.00024420308393608857, 'R@10': 0.0012791590110937973, 'R@100': 0.015826685582715074, 'MRR@10': 0.00038957590618171595, 'MRR@100': 0.0007424721577927331, 'nDCG@10': 0.0005828860695419072}
+{'R@1': 0.00024420308393608857, 'R@10': 0.0012791590110937973, 'R@100': 0.015826685582715074, 'MRR@10': 0.00038957590618171595, 'MRR@100': 0.0007424721577927331, 'nDCG@10': 0.0005828860695419072}
+{'R@1': 0.00024420308393608857, 'R@10': 0.0012791590110937973, 'R@100': 0.015826685582715074, 'MRR@10': 0.00038957590618171595, 'MRR@100': 0.0007424721577927331, 'nDCG@10': 0.0005828860695419072}
+Test out_split/model-3-fit/18.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0004651487313068354, 'R@10': 0.0048724329604391, 'R@100': 0.01695467125613415, 'MRR@10': 0.0014306276812963343, 'MRR@100': 0.0017270633015710457, 'nDCG@10': 0.002223446669326611}
+{'R@1': 0.0004651487313068354, 'R@10': 0.0048724329604391, 'R@100': 0.01695467125613415, 'MRR@10': 0.0014306276812963343, 'MRR@100': 0.0017270633015710457, 'nDCG@10': 0.002223446669326611}
+{'R@1': 0.0004651487313068354, 'R@10': 0.0048724329604391, 'R@100': 0.01695467125613415, 'MRR@10': 0.0014306276812963343, 'MRR@100': 0.0017270633015710457, 'nDCG@10': 0.002223446669326611}
+Test out_split/model-3-fit/27.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 3.488615484801265e-05, 'R@10': 0.0012442728562457846, 'R@100': 0.015268507105146871, 'MRR@10': 0.0003476248435199056, 'MRR@100': 0.0007807101604698768, 'nDCG@10': 0.0005586755642518517}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0012442728562457846, 'R@100': 0.015268507105146871, 'MRR@10': 0.0003476248435199056, 'MRR@100': 0.0007807101604698768, 'nDCG@10': 0.0005586755642518517}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0012442728562457846, 'R@100': 0.015268507105146871, 'MRR@10': 0.0003476248435199056, 'MRR@100': 0.0007807101604698768, 'nDCG@10': 0.0005586755642518517}
+Test out_split/model-3-fit/36.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 2.3257436565341767e-05, 'R@10': 0.0010814708002883922, 'R@100': 0.009698351047747517, 'MRR@10': 0.0001765073310762543, 'MRR@100': 0.0004276361701324823, 'nDCG@10': 0.0003739442074988523}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0010814708002883922, 'R@100': 0.009698351047747517, 'MRR@10': 0.0001765073310762543, 'MRR@100': 0.0004276361701324823, 'nDCG@10': 0.0003739442074988523}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0010814708002883922, 'R@100': 0.009698351047747517, 'MRR@10': 0.0001765073310762543, 'MRR@100': 0.0004276361701324823, 'nDCG@10': 0.0003739442074988523}
+Test out_split/model-3-fit/45.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.00012791590110937972, 'R@10': 0.0037677047235853663, 'R@100': 0.015838314300997743, 'MRR@10': 0.0007051202538678435, 'MRR@100': 0.0010791403538208133, 'nDCG@10': 0.0013832554267029001}
+{'R@1': 0.00012791590110937972, 'R@10': 0.0037677047235853663, 'R@100': 0.015838314300997743, 'MRR@10': 0.0007051202538678435, 'MRR@100': 0.0010791403538208133, 'nDCG@10': 0.0013832554267029001}
+{'R@1': 0.00012791590110937972, 'R@10': 0.0037677047235853663, 'R@100': 0.015838314300997743, 'MRR@10': 0.0007051202538678435, 'MRR@100': 0.0010791403538208133, 'nDCG@10': 0.0013832554267029001}
+Test out_split/model-3-fit/54.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 5.814359141335442e-05, 'R@10': 0.0008488964346349745, 'R@100': 0.012977649603460706, 'MRR@10': 0.00023178988862641202, 'MRR@100': 0.0005391658822619422, 'nDCG@10': 0.00037401144392333813}
+{'R@1': 5.814359141335442e-05, 'R@10': 0.0008488964346349745, 'R@100': 0.012977649603460706, 'MRR@10': 0.00023178988862641202, 'MRR@100': 0.0005391658822619422, 'nDCG@10': 0.00037401144392333813}
+{'R@1': 5.814359141335442e-05, 'R@10': 0.0008488964346349745, 'R@100': 0.012977649603460706, 'MRR@10': 0.00023178988862641202, 'MRR@100': 0.0005391658822619422, 'nDCG@10': 0.00037401144392333813}
+Test out_split/model-3-fit/63.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 8.140102797869618e-05, 'R@10': 0.0014535897853338606, 'R@100': 0.011814777775193618, 'MRR@10': 0.000429515015997794, 'MRR@100': 0.0006787313244144055, 'nDCG@10': 0.0006632205153660894}
+{'R@1': 8.140102797869618e-05, 'R@10': 0.0014535897853338606, 'R@100': 0.011814777775193618, 'MRR@10': 0.000429515015997794, 'MRR@100': 0.0006787313244144055, 'nDCG@10': 0.0006632205153660894}
+{'R@1': 8.140102797869618e-05, 'R@10': 0.0014535897853338606, 'R@100': 0.011814777775193618, 'MRR@10': 0.000429515015997794, 'MRR@100': 0.0006787313244144055, 'nDCG@10': 0.0006632205153660894}
+Test out_split/model-3-fit/72.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 3.488615484801265e-05, 'R@10': 0.0023606298113821892, 'R@100': 0.012698560364676606, 'MRR@10': 0.00033031097407681807, 'MRR@100': 0.0006198643786906562, 'nDCG@10': 0.0007686283868485505}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0023606298113821892, 'R@100': 0.012698560364676606, 'MRR@10': 0.00033031097407681807, 'MRR@100': 0.0006198643786906562, 'nDCG@10': 0.0007686283868485505}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0023606298113821892, 'R@100': 0.012698560364676606, 'MRR@10': 0.00033031097407681807, 'MRR@100': 0.0006198643786906562, 'nDCG@10': 0.0007686283868485505}
+Test out_split/model-3-fit/81.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 4.651487313068353e-05, 'R@10': 0.0005581784775682024, 'R@100': 0.010826336721166592, 'MRR@10': 0.00014329165083868894, 'MRR@100': 0.0003910254235793351, 'nDCG@10': 0.0002377419859638057}
+{'R@1': 4.651487313068353e-05, 'R@10': 0.0005581784775682024, 'R@100': 0.010826336721166592, 'MRR@10': 0.00014329165083868894, 'MRR@100': 0.0003910254235793351, 'nDCG@10': 0.0002377419859638057}
+{'R@1': 4.651487313068353e-05, 'R@10': 0.0005581784775682024, 'R@100': 0.010826336721166592, 'MRR@10': 0.00014329165083868894, 'MRR@100': 0.0003910254235793351, 'nDCG@10': 0.0002377419859638057}
+Test out_split/model-3-fit/90.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0001395446193920506, 'R@10': 0.0009768123357443543, 'R@100': 0.0025699467404702654, 'MRR@10': 0.00030458474216178217, 'MRR@100': 0.00036780624404263694, 'nDCG@10': 0.0004591869666387885}
+{'R@1': 0.0001395446193920506, 'R@10': 0.0009768123357443543, 'R@100': 0.0025699467404702654, 'MRR@10': 0.00030458474216178217, 'MRR@100': 0.00036780624404263694, 'nDCG@10': 0.0004591869666387885}
+{'R@1': 0.0001395446193920506, 'R@10': 0.0009768123357443543, 'R@100': 0.0025699467404702654, 'MRR@10': 0.00030458474216178217, 'MRR@100': 0.00036780624404263694, 'nDCG@10': 0.0004591869666387885}
+Test out_split/model-3-fit/99.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 1.1628718282670883e-05, 'R@10': 0.00041863385817615185, 'R@100': 0.01014024234248901, 'MRR@10': 0.00010272957397175366, 'MRR@100': 0.00032202432065710625, 'nDCG@10': 0.00017568029572345776}
+{'R@1': 1.1628718282670883e-05, 'R@10': 0.00041863385817615185, 'R@100': 0.01014024234248901, 'MRR@10': 0.00010272957397175366, 'MRR@100': 0.00032202432065710625, 'nDCG@10': 0.00017568029572345776}
+{'R@1': 1.1628718282670883e-05, 'R@10': 0.00041863385817615185, 'R@100': 0.01014024234248901, 'MRR@10': 0.00010272957397175366, 'MRR@100': 0.00032202432065710625, 'nDCG@10': 0.00017568029572345776}
+Test out_split/model-3-fit/108.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 1.1628718282670883e-05, 'R@10': 0.0006860943786775822, 'R@100': 0.011210084424494731, 'MRR@10': 0.00016472633195892947, 'MRR@100': 0.0003775425254824962, 'nDCG@10': 0.00028386417087507493}
+{'R@1': 1.1628718282670883e-05, 'R@10': 0.0006860943786775822, 'R@100': 0.011210084424494731, 'MRR@10': 0.00016472633195892947, 'MRR@100': 0.0003775425254824962, 'nDCG@10': 0.00028386417087507493}
+{'R@1': 1.1628718282670883e-05, 'R@10': 0.0006860943786775822, 'R@100': 0.011210084424494731, 'MRR@10': 0.00016472633195892947, 'MRR@100': 0.0003775425254824962, 'nDCG@10': 0.00028386417087507493}
+Test out_split/model-3-fit/117.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.00032560411191478474, 'R@10': 0.0010233272088750378, 'R@100': 0.00881456845826453, 'MRR@10': 0.0004949773166160355, 'MRR@100': 0.0006999380261455667, 'nDCG@10': 0.0006169276899872289}
+{'R@1': 0.00032560411191478474, 'R@10': 0.0010233272088750378, 'R@100': 0.00881456845826453, 'MRR@10': 0.0004949773166160355, 'MRR@100': 0.0006999380261455667, 'nDCG@10': 0.0006169276899872289}
+{'R@1': 0.00032560411191478474, 'R@10': 0.0010233272088750378, 'R@100': 0.00881456845826453, 'MRR@10': 0.0004949773166160355, 'MRR@100': 0.0006999380261455667, 'nDCG@10': 0.0006169276899872289}
+Test out_split/model-3-fit/126.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 2.3257436565341767e-05, 'R@10': 0.0007558666883736075, 'R@100': 0.00908202897876596, 'MRR@10': 0.00014528514540143256, 'MRR@100': 0.0003437057280815597, 'nDCG@10': 0.0002813870294786792}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0007558666883736075, 'R@100': 0.00908202897876596, 'MRR@10': 0.00014528514540143256, 'MRR@100': 0.0003437057280815597, 'nDCG@10': 0.0002813870294786792}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0007558666883736075, 'R@100': 0.00908202897876596, 'MRR@10': 0.00014528514540143256, 'MRR@100': 0.0003437057280815597, 'nDCG@10': 0.0002813870294786792}
+Test out_split/model-3-fit/135.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.0018257087703793288, 'R@100': 0.011605460846105543, 'MRR@10': 0.0006633722323189036, 'MRR@100': 0.0008707401269205076, 'nDCG@10': 0.0009456930849780215}
+{'R@1': 0.0, 'R@10': 0.0018257087703793288, 'R@100': 0.011605460846105543, 'MRR@10': 0.0006633722323189036, 'MRR@100': 0.0008707401269205076, 'nDCG@10': 0.0009456930849780215}
+{'R@1': 0.0, 'R@10': 0.0018257087703793288, 'R@100': 0.011605460846105543, 'MRR@10': 0.0006633722323189036, 'MRR@100': 0.0008707401269205076, 'nDCG@10': 0.0009456930849780215}
+Test out_split/model-3-fit/144.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0, 'R@10': 0.004860804242156429, 'R@100': 0.012977649603460706, 'MRR@10': 0.0011430061012008585, 'MRR@100': 0.0013162332471198784, 'nDCG@10': 0.0019913482498549796}
+{'R@1': 0.0, 'R@10': 0.004860804242156429, 'R@100': 0.012977649603460706, 'MRR@10': 0.0011430061012008585, 'MRR@100': 0.0013162332471198784, 'nDCG@10': 0.0019913482498549796}
+{'R@1': 0.0, 'R@10': 0.004860804242156429, 'R@100': 0.012977649603460706, 'MRR@10': 0.0011430061012008585, 'MRR@100': 0.0013162332471198784, 'nDCG@10': 0.0019913482498549796}
+Test out_split/model-3-fit/153.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 3.488615484801265e-05, 'R@10': 0.0028374072609716958, 'R@100': 0.012024094704281695, 'MRR@10': 0.0006847884551561573, 'MRR@100': 0.0010631238052593757, 'nDCG@10': 0.001187331016333931}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0028374072609716958, 'R@100': 0.012024094704281695, 'MRR@10': 0.0006847884551561573, 'MRR@100': 0.0010631238052593757, 'nDCG@10': 0.001187331016333931}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0028374072609716958, 'R@100': 0.012024094704281695, 'MRR@10': 0.0006847884551561573, 'MRR@100': 0.0010631238052593757, 'nDCG@10': 0.001187331016333931}
+Test out_split/model-3-fit/162.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 3.488615484801265e-05, 'R@10': 0.001395446193920506, 'R@100': 0.009186687443309999, 'MRR@10': 0.00033352732988754075, 'MRR@100': 0.0005670986240316718, 'nDCG@10': 0.0005764133037440308}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.001395446193920506, 'R@100': 0.009186687443309999, 'MRR@10': 0.00033352732988754075, 'MRR@100': 0.0005670986240316718, 'nDCG@10': 0.0005764133037440308}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.001395446193920506, 'R@100': 0.009186687443309999, 'MRR@10': 0.00033352732988754075, 'MRR@100': 0.0005670986240316718, 'nDCG@10': 0.0005764133037440308}
+Test out_split/model-3-fit/171.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 3.488615484801265e-05, 'R@10': 0.0043375119194362394, 'R@100': 0.010942623903993302, 'MRR@10': 0.0009644960464203675, 'MRR@100': 0.0011533119689401655, 'nDCG@10': 0.001716462242068825}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0043375119194362394, 'R@100': 0.010942623903993302, 'MRR@10': 0.0009644960464203675, 'MRR@100': 0.0011533119689401655, 'nDCG@10': 0.001716462242068825}
+{'R@1': 3.488615484801265e-05, 'R@10': 0.0043375119194362394, 'R@100': 0.010942623903993302, 'MRR@10': 0.0009644960464203675, 'MRR@100': 0.0011533119689401655, 'nDCG@10': 0.001716462242068825}
+Test out_split/model-3-fit/180.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.00017443077424006325, 'R@10': 0.0011628718282670884, 'R@100': 0.013512570644463567, 'MRR@10': 0.00042541266260362926, 'MRR@100': 0.0007037832753095378, 'nDCG@10': 0.0005943570285506005}
+{'R@1': 0.00017443077424006325, 'R@10': 0.0011628718282670884, 'R@100': 0.013512570644463567, 'MRR@10': 0.00042541266260362926, 'MRR@100': 0.0007037832753095378, 'nDCG@10': 0.0005943570285506005}
+{'R@1': 0.00017443077424006325, 'R@10': 0.0011628718282670884, 'R@100': 0.013512570644463567, 'MRR@10': 0.00042541266260362926, 'MRR@100': 0.0007037832753095378, 'nDCG@10': 0.0005943570285506005}
+Test out_split/model-3-fit/189.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 4.651487313068353e-05, 'R@10': 0.0012907877293764681, 'R@100': 0.01474521478242668, 'MRR@10': 0.0002636996453425504, 'MRR@100': 0.0007121894182984475, 'nDCG@10': 0.000494448249485429}
+{'R@1': 4.651487313068353e-05, 'R@10': 0.0012907877293764681, 'R@100': 0.01474521478242668, 'MRR@10': 0.0002636996453425504, 'MRR@100': 0.0007121894182984475, 'nDCG@10': 0.000494448249485429}
+{'R@1': 4.651487313068353e-05, 'R@10': 0.0012907877293764681, 'R@100': 0.01474521478242668, 'MRR@10': 0.0002636996453425504, 'MRR@100': 0.0007121894182984475, 'nDCG@10': 0.000494448249485429}
+Test out_split/model-3-fit/198.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 2.3257436565341767e-05, 'R@10': 0.0017326790241179617, 'R@100': 0.014280066051119845, 'MRR@10': 0.00031261870983246903, 'MRR@100': 0.0006989859689501576, 'nDCG@10': 0.000628332438570719}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0017326790241179617, 'R@100': 0.014280066051119845, 'MRR@10': 0.00031261870983246903, 'MRR@100': 0.0006989859689501576, 'nDCG@10': 0.000628332438570719}
+{'R@1': 2.3257436565341767e-05, 'R@10': 0.0017326790241179617, 'R@100': 0.014280066051119845, 'MRR@10': 0.00031261870983246903, 'MRR@100': 0.0006989859689501576, 'nDCG@10': 0.000628332438570719}
+Test out_split/model-3-fit/207.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 5.814359141335442e-05, 'R@10': 0.0023257436565341768, 'R@100': 0.012117124450543061, 'MRR@10': 0.00046899266873916284, 'MRR@100': 0.0008565182630800452, 'nDCG@10': 0.0008919149017402629}
+{'R@1': 5.814359141335442e-05, 'R@10': 0.0023257436565341768, 'R@100': 0.012117124450543061, 'MRR@10': 0.00046899266873916284, 'MRR@100': 0.0008565182630800452, 'nDCG@10': 0.0008919149017402629}
+{'R@1': 5.814359141335442e-05, 'R@10': 0.0023257436565341768, 'R@100': 0.012117124450543061, 'MRR@10': 0.00046899266873916284, 'MRR@100': 0.0008565182630800452, 'nDCG@10': 0.0008919149017402629}
+Test out_split/model-3-fit/216.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0005581784775682024, 'R@10': 0.0016280205595739239, 'R@100': 0.008744796148568506, 'MRR@10': 0.0008760901000475858, 'MRR@100': 0.0010699453672659079, 'nDCG@10': 0.0010521690312910025}
+{'R@1': 0.0005581784775682024, 'R@10': 0.0016280205595739239, 'R@100': 0.008744796148568506, 'MRR@10': 0.0008760901000475858, 'MRR@100': 0.0010699453672659079, 'nDCG@10': 0.0010521690312910025}
+{'R@1': 0.0005581784775682024, 'R@10': 0.0016280205595739239, 'R@100': 0.008744796148568506, 'MRR@10': 0.0008760901000475858, 'MRR@100': 0.0010699453672659079, 'nDCG@10': 0.0010521690312910025}
+Test out_split/model-3-fit/225.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 1.1628718282670883e-05, 'R@10': 0.0033606995836918856, 'R@100': 0.012372956252761821, 'MRR@10': 0.0005650864899766004, 'MRR@100': 0.0007773236930623724, 'nDCG@10': 0.001191731532316482}
+{'R@1': 1.1628718282670883e-05, 'R@10': 0.0033606995836918856, 'R@100': 0.012372956252761821, 'MRR@10': 0.0005650864899766004, 'MRR@100': 0.0007773236930623724, 'nDCG@10': 0.001191731532316482}
+{'R@1': 1.1628718282670883e-05, 'R@10': 0.0033606995836918856, 'R@100': 0.012372956252761821, 'MRR@10': 0.0005650864899766004, 'MRR@100': 0.0007773236930623724, 'nDCG@10': 0.001191731532316482}
+Test out_split/model-3-fit/234.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0005581784775682024, 'R@10': 0.001197757983115101, 'R@100': 0.009163430006744657, 'MRR@10': 0.0007046818696468675, 'MRR@100': 0.0008759439142259219, 'nDCG@10': 0.0008183735622866368}
+{'R@1': 0.0005581784775682024, 'R@10': 0.001197757983115101, 'R@100': 0.009163430006744657, 'MRR@10': 0.0007046818696468675, 'MRR@100': 0.0008759439142259219, 'nDCG@10': 0.0008183735622866368}
+{'R@1': 0.0005581784775682024, 'R@10': 0.001197757983115101, 'R@100': 0.009163430006744657, 'MRR@10': 0.0007046818696468675, 'MRR@100': 0.0008759439142259219, 'nDCG@10': 0.0008183735622866368}
+out_split/model-3-fit/225.pt
