@@ -473,7 +473,7 @@ def parse_args():
     parser.add_argument('--train_data', type=str, default='dataset/nq320k/train.json')
     parser.add_argument('--dev_data', type=str, default='dataset/nq320k/dev.json')
     parser.add_argument('--corpus_data', type=str, default='dataset/nq320k/corpus_lite.json')
-    parser.add_argument('--save_path', type=str, default='out/model')
+    parser.add_argument('--save_path', type=str, default='out_ja/model')
     args = parser.parse_args()
 
     print('====Input Arguments====')
@@ -501,7 +501,7 @@ def main():
         config['loss_w'] = 1
         # chạy train
         # checkpoint = train(config)
-        checkpoint = 'out/model-1-pre/0.pt'
+        checkpoint = 'out_ja/model-1-pre/0.pt'
         # test_dr(config)
 
         config['save_path'] = args.save_path + f'-{loop + 1}'
@@ -510,7 +510,7 @@ def main():
         config['epochs'] = 10   # default: 200
         config['loss_w'] = 2
         # checkpoint = train(config)
-        checkpoint = 'out/model-1/9.pt'
+        checkpoint = 'out_ja/model-1/9.pt'
         # test_dr(config)
 
         test(config)

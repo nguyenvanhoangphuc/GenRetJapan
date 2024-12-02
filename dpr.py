@@ -170,8 +170,8 @@ def train():
     tokenizer = AutoTokenizer.from_pretrained('t5-base')
     optimizer = AdamW(model.parameters(), 2e-4)
 
-    data = json.load(open('data/ms320k/train.json'))
-    corpus = read_file('data/ms320k/corpus.txt')
+    data = json.load(open('./ms320k/train.json'))
+    corpus = read_file('./ms320k/corpus.txt')
     dataset = BiDataset(data=data, corpus=corpus, tokenizer=tokenizer, max_doc_len=128, max_q_len=32)
     accelerator.print(f'data size={len(dataset)}')
     data_loader = torch.utils.data.DataLoader(dataset, collate_fn=dataset.collate_fn, batch_size=batch_size,
@@ -438,6 +438,6 @@ def test_baseline():
 
 if __name__ == '__main__':
     # do()
-    # train()
+    train()
     # test()
-    test_baseline()
+    # test_baseline()

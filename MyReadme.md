@@ -49,3 +49,9 @@ model-3-fit mặc định là 1000 thoã mãn bội của 9 + 1 mà nó hơi nhi
 
 # Chỉnh batch_size:
 - Tìm kiếm in_batch_size dòng 635, chỉnh từ 32 lên 128 nếu như có GPU dư
+
+# Run on split nq_320k
+python run.py --model_name t5-base --code_num 512 --max_length 3 --train_data nq320k_bm25_split/train.json --dev_data nq320k_bm25_split/dev.json --corpus_data nq320k_bm25_split/corpus_lite.json --save_path out_bm25/model
+
+# Run on full ms_marco
+python run.py --model_name t5-base --code_num 512 --max_length 3 --train_data nq320k/train.json --dev_data nq320k/dev.json --corpus_data nq320k/corpus_lite.json --save_path out/model
